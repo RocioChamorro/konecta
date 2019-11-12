@@ -19,7 +19,7 @@ export const viewLogin = () => {
     <input class="inputs" type="password" name="contrasena" id="password" >
     <p class="error" id="error"></p>
     <button class= "btn-login" name="button" type="submit" id="login">INICIAR SESIÓN</button>
-    <p class="registro">o Activa cuenta</p>
+    <a class="registro" href="#/register" id="registrate">o Activa cuenta</a>
     <!--<div class="btn-fb-google">
       <a id="fb" href="#"><img class="facebook" src="../img/fb.png"/></a>
       <a id="goog" href="#"><img class="google" src="../img/google+.png" /></a>
