@@ -125,6 +125,9 @@ text-decoration-line: underline;
 
 color: #00B8AD;
 }
+.margin-form {
+    margin: 53px 0 15px;
+}
 .registro {
     /* font-weight: bold; */
     font-family:sans-serif;

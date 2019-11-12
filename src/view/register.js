@@ -4,7 +4,7 @@ export const viewRegister = () => {
   const registerContainer = document.createElement('div');
   const registerTemplate = `  
     <img class="logo" src="../img/circlenutri.png" alt="logo de la web foods kids"/>
-    <form id="screen-register" class="flex-form">
+    <form id="screen-register" class="flex-form margin-form">
     <img src="../img/logotk.png" alt="logo de la web food kids"/>
     <p class="welcome">ACTIVAR CUENTA</p>
       <label class="text-label">DNI/Carné de extranjería</label>
