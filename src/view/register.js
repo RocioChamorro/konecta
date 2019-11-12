@@ -4,17 +4,23 @@ export const viewRegister = () => {
   const registerContainer = document.createElement('div');
   const registerTemplate = `  
     <img class="logo" src="../img/circlenutri.png" alt="logo de la web foods kids"/>
-    <form id="screen-register" class="flex-form">
-    <img class="img" src="../img/logo1.png" alt="logo de la web food kids"/>
-      <h1 class="welcome2">- Registro -</h1>
-      <input class="inputs" type="text" name="DNI/Carné de extranjería" id="dni" placeholder="DNI/Carné de extranjería">
-      <input class="inputs" type="email" name="Correo Institucional" id="email" placeholder="Email">
-      <input class="inputs" type="password" name="password" id="password" placeholder="Contraseña">
-      <input class="inputs" type="password" name="second-password" id="second-password" placeholder="Repetir contraseña">
-      <p class="obligatorio">Campos obligatorios (*)</p>
+    <form id="screen-register" class="flex-form margin-form">
+    <img src="../img/logotk.png" alt="logo de la web food kids"/>
+    <p class="welcome">ACTIVAR CUENTA</p>
+      <label class="text-label">DNI/Carné de extranjería</label>
+      <input class="inputs" type="text" name="DNI/Carné de extranjería" id="dni">
+      <label class="text-label">Email</label>
+      <input class="inputs" type="email" name="Correo Institucional" id="email">
+      <label class="text-label">Contraseña</label>
+      <input class="inputs" type="password" name="password" id="password">
+      <label class="text-label">Repetir contraseña</label>
+      <input class="inputs" type="password" name="second-password" id="second-password">
+      <!--<p class="obligatorio">Campos obligatorios (*)</p>-->
       <button class="btn-login" name="button" type="submit" id="registrar">ACTIVAR CUENTA</button>
-      <a href="">o Iniciar sesión</a>
-      <a href="">Olvidé mi contraseña </a>
+      <a class="registro" href="">o Iniciar sesión</a>
+      <a class="bold" href="">Olvidé mi contraseña </a>
+      <label class="tu-red">Tu Red profesional Konecta</label>
+      
       <p class="error" id="error"></p>
     </form>`;
   registerContainer.innerHTML = registerTemplate;
