@@ -51,26 +51,21 @@ const emailVerification = () => {
 
 export const controllerRegister = () => {
   window.event.preventDefault();
-  const name = document.getElementById('name').value;
+  const dni = document.getElementById('dni').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  loginRegister(email, password).then((response) => {
+  const passwordTwo = document.getElementById('second-password').value;
+  loginRegister(dni,email, password, passwordTwo).then((response) => {
     console.log(response);
     emailVerification();
-    if (name !== '') {
+    
       const newName = maysFirst(name.toLowerCase());
       document.getElementById('screen-register').innerHTML = `
-      <h1 class="register-ok">Foods Kids agradece tu registro ${newName}!</h1>
-      <p class="ok">Verifica tu cuenta email para acceder a Foods Kids</p>
+      <h1 class="register-ok">¡Bienvenid@, ${newName}!</h1>
+      <p class="ok">Te enviamos un correo electrónico para que actives tu cuenta.</p>
       <img src="../img/confeti.gif">
       <a class="ir-login" href="#/login" id="registrate">Ir a Log in</a>`;
-    } else {
-      document.getElementById('screen-register').innerHTML = `
-      <h1 class="register-ok">Foods Kids agradece tu registro!</h1>
-      <p class="ok">Verifica tu cuenta email para acceder a Foods Kids</p>
-      <img src="../img/confeti.gif">
-      <a class="ir-login" href="#/login" id="registrate">Ir a Log in</a>`;
-    }
+
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
