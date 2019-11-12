@@ -18,6 +18,7 @@ body {
     justify-content: center;
 }
 
+
 /*------------------ VIEW LOGIN -----------------------------*/
 
 .colorPrincipal {
@@ -433,6 +434,7 @@ header {
 }
 
 .comandos-post {
+    margin-bottom: 15px;
     background: #f1f1f1;
     display: flex;
     align-items: center;
@@ -587,6 +589,10 @@ header {
 .hide {
     display: none;
 }
+.imgConvocatoria{
+    height: 200px;
+    width: 350px;
+}
 
 @media screen and (min-width:764px) {
     * {
@@ -657,6 +663,7 @@ header {
     .logo-bars label {
         display: none
     }
+ 
     .navbar {
         position: static;
         display: flex;

@@ -1,25 +1,34 @@
 import { viewLogin } from './view/login.js';
 import { viewRegister } from './view/register.js';
 import { viewHome } from './view/home.js';
+import { viewPosts } from './view/post.js';
+
 import { viewProfile } from './view/profile.js';
 import { readPosts } from './model/model-firestore.js';
+
+
 
 const viewTmp = (router) => {
   const root = document.getElementById('root');
   root.innerHTML = '';
   switch (router) {
     case '#/login':
-      root.innerHTML = '';
-      root.appendChild(viewHome());
+        readPosts((query) => {
+          root.innerHTML = '';
+          root.appendChild(viewPosts(query));
+      });
+      // root.innerHTML = '';
+      // root.appendChild(viewPosts());
       break;
     case '#/register':
       root.appendChild(viewRegister());
       break;
     case '#/home':
-      readPosts((call) => {
+    
+       readPosts((call) => {
         root.innerHTML = '';
         root.appendChild(viewHome(call));
-      });
+       });
       break;
     case '#/profile':
       root.appendChild(viewProfile());
