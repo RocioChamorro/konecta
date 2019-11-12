@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&Cormorant+Garamond|Montserrat&display=swap');
 
 * {
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 0.5px; 
+    /* font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.5px;  */
     font-size: 13px;
     margin: 0;
     box-sizing: border-box;
@@ -34,29 +34,70 @@ body {
     min-height: 100vh;
 }
 .welcome {
-    color: grey;
+    /* color: grey; */
+    margin: 25px 0;
+    font-family: sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+
+
+color: #168D86;
+}
+.text-label {
+    font-family:sans-serif;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+align-self: flex-start;
+
+color: #000000;
+}
+.tu-red {
+    font-family:sans-serif  font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #979797;
+    margin: 45px 0 0;
 }
 .logo, .welcome-description {
     display: none;
 }
 .inputs {
-    width: 275px;
+    /* width: 275px;
     margin: 2% 0;
     border: 1px solid #f2ea77;
+    outline: none; */
+    width: 100%;
+    margin: 2% 0 8% 0;
+    border: 1px solid #f2ea77;
     outline: none;
+    border: 2px solid #D8D8D8;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 .btn-login {
     width: 170px;
     margin-top: 3%;
     margin-bottom: 5%;
-    background: #d01818;
+    background: #00B8AD;
     color: white;
     border-style: none;
     font-weight: bold;
     cursor: pointer;
+    letter-spacing: 1.38947px;
+    font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+text-align: center;
+
 }
 .inputs, .btn-login {
-    border-radius: 15px;
+    border-radius: 8px;
     padding: 10px;
     outline: none;
 }
@@ -71,12 +112,27 @@ body {
     margin: 10px 0;
 }
 .bold {
-    font-weight: bold;
+    /* font-weight: bold;
     color:#d01818;
-    text-decoration: none;
+    text-decoration: none; */
+    font-family:sans-serifnt-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+text-decoration-line: underline;
+
+color: #00B8AD;
 }
 .registro {
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-family:sans-serifnt-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+text-decoration-line: underline;
+
+color: #00B8AD;
+margin: 15px 0;
 }
 
 /*------------------------ VIEW REGISTER ---------------------------*/ 
