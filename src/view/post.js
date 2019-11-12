@@ -20,7 +20,7 @@ export const viewPosts = query => {
   let postTemplate = "";
   query.forEach(doc => {
     console.log(doc);
-    postTemplate = `   
+    postTemplate += `   
       <div class="comandos-post">
         <div>
           <div class="flex-creador-privicity">
@@ -41,7 +41,7 @@ export const viewPosts = query => {
       </div>
     `;
     postContainer.innerHTML = postTemplate;
-    postContainer.classList.add("container-posts");
+    // postContainer.classList.add("");
   });
   return postContainer;
 };

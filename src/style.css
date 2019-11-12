@@ -373,6 +373,7 @@ header{
     height: 55px;
 }
 .comandos-post {
+    margin-bottom: 15px;
     background: #f1f1f1;
     display: flex;
     align-items: center;
@@ -506,7 +507,9 @@ header{
 }
 .imgConvocatoria{
     height: 200px;
+    width: 350px;
 }
+
 @media screen and (min-width:764px) {
     * {
         font-size: 15px;
