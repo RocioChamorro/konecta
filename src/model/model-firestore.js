@@ -55,6 +55,9 @@ const editComment = (idD, id, newText) => firebase.firestore().collection('posts
   .update({
     comentario: newText,
   });
+
+
+
 export {
   addPost,
   readPosts,
