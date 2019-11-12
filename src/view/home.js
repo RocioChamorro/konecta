@@ -13,7 +13,7 @@ export const viewHome = () => {
     <li><img src="../img/ring.png"/></li>
     </div>
     <input type="checkbox" class="hide" id="toggle">  
-    <nav class="colorPrincipal">  
+    <nav class="colorPrincipal navbar">  
       <ul class="main-nav flex">
       <li><a href="#/profile">Nombre</a></li>
         <li><a href="">Notificaciones</a></li>
@@ -32,10 +32,15 @@ export const viewHome = () => {
       <div class="posts-content" id="posts-content"></div>
     </div>
   </main>
-  <footer class="footer">
-  <div class="flex">
-      
-  </div>
+  <footer>
+    <div>
+    <ul class="footer flex">
+      <li><img src="../img/home.png"/>Inicio</li>
+      <li><img src="../img/resumen.png"/>Mis Postulaciones</li>
+      <li><img src="../img/oportunidades.png"/>Oportunidades</li>
+      <li><img src="../img/chat.png"/>Mensajes</li>
+    </ul>
+    </div>
 </footer>`;
   homeContainer.innerHTML = homeTemplate;
   homeContainer.classList.add('container-home');
