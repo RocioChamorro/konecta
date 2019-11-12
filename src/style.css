@@ -17,6 +17,7 @@ body {
     justify-content: center;
 }
 
+
 /*------------------ VIEW LOGIN -----------------------------*/
 
 .centerlogin{
@@ -503,6 +504,9 @@ header{
 .hide {
     display: none;
 }
+.imgConvocatoria{
+    height: 200px;
+}
 @media screen and (min-width:764px) {
     * {
         font-size: 15px;
@@ -577,6 +581,7 @@ header{
     .logo-bars label{
         display: none
     }
+ 
     .navbar {
         position: static;
         display: flex;
