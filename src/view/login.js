@@ -14,7 +14,7 @@ export const viewLogin = () => {
     <p class="welcome"> INICIAR SESIÓN</p>
     <!--<p class="welcome-description"> ¡Bienvenido a la red que te ayuda con la alimentación de los engreidos de casa!</p>-->
     <label class="text-label">DNI/Carné de extranjería</label>
-    <input class="inputs" type="email" name="correo" id="email">
+    <input class="inputs" type="email" name="correo" id="dni">
     <label class="text-label">Contraseña</label>
     <input class="inputs" type="password" name="contrasena" id="password" >
     <p class="error" id="error"></p>
