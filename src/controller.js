@@ -16,17 +16,36 @@ const changeRoute = (route) => {
   window.location.hash = route;
 };
 
+const findColaborador = (dni1) => {
+  firebase.firestore().collection('colaboradores').doc(dni1).get().then(dni1 => {
+    if (!dni1.exists) {
+      console.log("No existe el colaborador");
+      document.getElementById('error').innerHTML = 'No existe el colaborador';
+      //Entiendo que aqui va el código para asignar el mail e imagen
+    }
+    else {
+      controllerRegister();
+      console.log("Existe el colaborador");
+    }
+  }).catch(function (error) {
+    
+    console.error("Error updating document: ", error);
+  });
+};
+
 const updateColaborador = (dni1, talentkEmail) => {
   firebase.firestore().collection('colaboradores').doc(dni1).update({
     Email_Personal: talentkEmail
-})
-.then(function() {
-    console.log("Document successfully updated!");
-})
-.catch(function(error) {
-    console.error("Error updating document: ", error);
-});
+  })
+    .then(function () {
+      console.log("Document successfully updated!");
+    })
+    .catch(function (error) {
+      console.error("Error updating document: ", error);
+    });
 };
+
+
 
 const maysFirst = (string) => {
   const resultFirst = string.charAt(0).toUpperCase() + string.slice(1);
@@ -42,11 +61,11 @@ export const controllerLogin = () => {
     console.log(result);
     console.log(result.user.emailVerified);
     changeRoute('#/home');
-   /*  if (result.user.emailVerified === false) {
-      document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';
-    } else {
-      changeRoute('#/home');
-    } */
+    /*  if (result.user.emailVerified === false) {
+       document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';
+     } else {
+       changeRoute('#/home');
+     } */
   }).catch((error) => {
     const errorMessage = error.message;
     if (dni1 === '' || password === '') {
@@ -72,14 +91,10 @@ export const controllerRegister = () => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const passwordTwo = document.getElementById('second-password').value;
-  if (password === passwordTwo ) {
+  if (password === passwordTwo) {
     loginRegister(dni, password).then((response) => {
       //  const use = currentUser();
       updateColaborador(dni1, email);
-      findDni(dni1).then((response) => {
-        console.log(response);
-      });
-      console.log(findDni(dni1));
       // emailVerification();
       const newName = maysFirst(email.toLowerCase());
       document.getElementById('screen-register').innerHTML = `
@@ -109,7 +124,7 @@ export const controllerRegister = () => {
        } */
     });
   }
-  else{
+  else {
     document.getElementById('error').innerHTML = 'Las contraseñas deben coincidir';
   }
 };
