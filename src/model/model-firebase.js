@@ -18,6 +18,11 @@ const loginFacebook = () => {
 
 const currentUser = () => firebase.auth().currentUser;
 
+// const colaborador = () => firebase.firestore().collection('colaboradores').get();
+const colaborador = () => {
+  return firebase.firestore().collection('colaboradores').get();
+};
+
 export {
   loginEmail,
   loginRegister,
@@ -25,4 +30,5 @@ export {
   loginGoogle,
   loginFacebook,
   currentUser,
+  colaborador,
 };

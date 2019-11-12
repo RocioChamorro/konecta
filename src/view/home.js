@@ -1,8 +1,8 @@
 import { controllerExit, createPost } from '../controller.js';
-import { currentUser } from '../model/model-firebase.js';
+import { colaborador } from '../model/model-firebase.js';
 import { viewPosts } from './post.js';
 
-export const viewHome = (arrPost) => {
+export const viewHome = () => {
   const homeContainer = document.createElement('div');
   homeContainer.innerHTML = '';
   const homeTemplate = `  
@@ -14,7 +14,7 @@ export const viewHome = (arrPost) => {
     <input type="checkbox" class="hide" id="toggle">  
     <nav class="navbar">  
       <ul class="main-nav">
-        <li><a href="#/profile">${currentUser().displayName ? `${currentUser().displayName}` : `${currentUser().email}`}</a></li>
+        <li><a href="#/profile">Name</a></li>
         <li><a href="#/home" id="cerrar">Cerrar Sesión </a></li>
       </ul>
     </nav> 
@@ -23,8 +23,8 @@ export const viewHome = (arrPost) => {
     <div class="container-user">
       <img class="color-img" src="../img/fruit_1.jpg" alt="frutas tropicales">
       <div class="email-user">
-        <img class="img-perfil" src="${currentUser().photoURL ? `${currentUser().photoURL}` : '../img/user.png'}" alt="foto de perfil extraida del email, google o facebook del usuario"/>
-        <p class="select">${currentUser().email}</p>
+        <img class="img-perfil" src="../img/user.png" alt="foto de perfil extraida del email, google o facebook del usuario"/>
+        <p class="select">email</p>
       </div>
     </div>
     <div class="total">
@@ -53,8 +53,20 @@ export const viewHome = (arrPost) => {
   const totalView = homeContainer.querySelector('#posts-content');
 
   exit.addEventListener('click', controllerExit);
-  buttonCompartir.addEventListener('click', createPost);
-  arrPost.forEach(obj => totalView.appendChild(viewPosts(obj)));
+
+  buttonCompartir.addEventListener('click', () => {
+      colaborador().then((querySnapshot) => {
+      const array = [];
+      querySnapshot.forEach((doc) => {
+        array.push({ id: doc.id, ...doc.data() });  
+      });
+      console.log(array);
+      });
+      
+  });
+    
+  
+  // arrPost.forEach(obj => totalView.appendChild(viewPosts(obj)));
 
   return homeContainer;
 };
