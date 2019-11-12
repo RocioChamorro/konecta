@@ -10,7 +10,7 @@ const viewTmp = (router) => {
   switch (router) {
     case '#/login':
       root.innerHTML = '';
-      root.appendChild(viewLogin());
+      root.appendChild(viewHome());
       break;
     case '#/register':
       root.appendChild(viewRegister());
