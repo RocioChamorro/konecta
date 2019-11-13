@@ -13,22 +13,25 @@ const viewTmp = (router) => {
   root.innerHTML = '';
   switch (router) {
     case '#/login':
-        readPosts((query) => {
-          root.innerHTML = '';
-          root.appendChild(viewPosts(query));
-      });
-      // root.innerHTML = '';
-      // root.appendChild(viewPosts());
+        root.innerHTML = '';
+        root.appendChild(viewLogin());
       break;
     case '#/register':
       root.appendChild(viewRegister());
       break;
     case '#/home':
-    
-       readPosts((call) => {
+      readPosts((call) => {
         root.innerHTML = '';
         root.appendChild(viewHome(call));
-       });
+      });
+      break;
+    case '#/posts':
+      readPosts((query) => {
+        root.innerHTML = '';
+        root.appendChild(viewPosts(query));
+      });
+      // root.innerHTML = '';
+      // root.appendChild(viewPosts());
       break;
     case '#/profile':
       root.appendChild(viewProfile());
