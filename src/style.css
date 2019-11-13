@@ -181,7 +181,10 @@ color: #168D86;
 text-align: start;
 margin: 20px 0 20px 20px;
 }
-
+.positionDiv{
+    flex-direction: column;
+    align-items: center;
+}
 .flex-form {
   display: flex;
   flex-direction: column;
@@ -483,6 +486,21 @@ header {
     color: #00B8AD;
 }
 
+.encabezadoCaja{
+    background: #00B8AD;
+    border: 3px solid #00B8AD;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.btnVermas{
+    width: 92px;
+    height: 29px;
+    background: #00B8AD;
+    border-radius: 8px;
+    list-style: none;
+}
+
 .letraHeader{
     font-size: 15px;
     line-height: 18px;
@@ -536,7 +554,10 @@ header {
     margin-left: 10px;
     margin-right: 10px;
 }
-
+.btn-salir{
+    color: white;
+    text-decoration: none;
+}
 .logo-bars label {
   font-size: 20px;
   /* margin: 0.5rem; */
@@ -1004,6 +1025,20 @@ line-height: 18px;
     display: flex;
     justify-content: center;
 }
+.width-hist {
+    padding: 20px;
+ 
+}
+.width-hist p, .width-hist p p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+    /* identical to box height */
+    
+    letter-spacing: 0.2px;
+}
 
 
 .card .card-body {
@@ -1037,6 +1072,23 @@ line-height: 18px;
 }
 .margin-flecha {
     margin-left: -100px;
+}
+.detalle {
+    border-style: none;
+    width: 80px;
+    height: 40px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    background: #00B8AD;
+    border-radius: 10px;
+}
+.flex3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 

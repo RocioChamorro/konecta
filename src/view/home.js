@@ -6,12 +6,13 @@ import { currentUser } from '../model/model-firebase.js';
 import { viewOportunidad } from './oportunidad.js';
 import { viewMisPostulaciones } from './mispostulaciones.js';
 import { viewOporColaboradores } from './oportunidadesColaborador.js';
+import { viewOportunidadesrh } from './oportunidadesrh.js';
 
 const headerPost = () => {
   const contentHeaderPost = document.createElement('div');
   contentHeaderPost .innerHTML = '';
   const contentHeaderPostTemplate = `
-      <a href="#/home"><img class="marginFlecha" src="../img/flecha.png"/></a>
+      <a href="#/"><img class="marginFlecha" src="../img/flecha.png"/></a>
       <label class="letraHeader">ANALISTA DE CDG - CAPACITACIÓN</label>
       <img class="img2" src="../img/ring.png"/>`;
 
@@ -23,12 +24,11 @@ const headerPost1 = (string) => {
   const contentHeaderPost = document.createElement('div');
   contentHeaderPost .innerHTML = '';
   const contentHeaderPostTemplate = `
-      <a href="#/home"><img class="marginFlecha margin-flecha" src="../img/flecha.png"/></a>
+      <a id="atras"><img class="marginFlecha margin-flecha" src="../img/flecha.png"/></a>
       <label class="letraHeader ">${string}</label>
    `;
-
       contentHeaderPost .innerHTML = contentHeaderPostTemplate;
-      contentHeaderPost.classList.add('flex-headerPost')
+      contentHeaderPost.classList.add('flex-headerPost');
     return contentHeaderPost;
 } 
 
@@ -52,7 +52,7 @@ export const viewHome = (query) => {
         <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
         <li><a href="#/mispostulaciones"><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
         <li><a href="#/postulantes"><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
-        <li><a href=""><img class="img-margin" src="../img/chat1.png"/>Mensajes</a></li>
+        <li><a href="#/login"><img class="img-margin" src="../img/chat1.png"/>Salir</a></li>
         <li><a href="#/home" id="cerrar"></a></li>
       </ul>
     </nav> 
@@ -61,17 +61,15 @@ export const viewHome = (query) => {
   </main>
   <footer id="footer">
     
-      <p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p id="home"><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
       <p class="hide" id="option-rrhh"><a class="registro" ><i class="fa fa-plus-circle more-post" aria-hidden="true"></i></a><br>Nueva oportunidad</p>
 
       <p id="option-col" ><a class="registro" ><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
       <p id="oportunidades"><a class="registro"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>
       
-      <p><img src="../img/chat.png"/><br>Mensajes</p>
+      <p><a href="#/login" id="cerrar" class="btn-salir"><img src="../img/chat.png"/><br>Salir</a></p>
 
-      <!--<p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
-      <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
-      <p><a class="registro" href="#/postulantes"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>-->
+      
 </footer>`;
   homeContainer.innerHTML = homeTemplate;
   homeContainer.classList.add('container-home');
@@ -80,6 +78,8 @@ export const viewHome = (query) => {
   const buttonCompartir = homeContainer.querySelector('#compartir');
   const main = homeContainer.querySelector('#main');
   const header = homeContainer.querySelector('#header');
+
+  const home = homeContainer.querySelector('#home');
 
   exit.addEventListener('click', controllerExit);
 
@@ -105,10 +105,13 @@ export const viewHome = (query) => {
    btnOportunidades.addEventListener('click', () => {
     if (currentUser().email.slice(0, 8) === '77921150' || currentUser().email.slice(0, 8) === '46694326') {
       main.innerHTML = '';
-      main.appendChild(viewMisPostulaciones());
+      main.appendChild(viewOportunidadesrh());
+    
     } else {
       main.innerHTML = '';
+      header.innerHTML='';
      main.appendChild(viewOporColaboradores());
+     header.appendChild(headerPost1('Mis postulaciones'));
     }
 
   }) 
@@ -121,13 +124,17 @@ export const viewHome = (query) => {
     main.innerHTML='';
     header.innerHTML='';
     main.appendChild(viewMisPostulaciones());
-    header.appendChild(headerPost1('Oportunidades'));
-
+    header.appendChild(headerPost1('Mis postulaciones'));
   })
  rrhh.addEventListener('click', () => {
     main.innerHTML = '';
     main.appendChild(viewOportunidad());
   }) 
+
+  home.addEventListener('click', () => {
+    main.innerHTML = '';
+    main.appendChild(viewHome(query));
+  })
 
   return homeContainer;
 };

@@ -8,6 +8,7 @@ import { viewOportunidad } from "./view/oportunidad.js";
 import { viewPostulantes } from "./view/postulantes.js";
 // import { viewDetallePostsActual } from "./view/detallepostsactual.js/index.js";
 
+import {viewOportunidadesrh} from "./view/oportunidadesrh.js"
 
 import {viewMisPostulaciones} from "./view/mispostulaciones.js"
 import {viewDetallePostActual} from "./view/detallepostulacionactual.js"
@@ -46,6 +47,9 @@ const viewTmp = router => {
     // root.innerHTML = '';
     // root.appendChild(viewPosts());
     // break;
+    case "#/opotunidadesrh":
+      root.appendChild(viewOportunidadesrh());
+      break;
     case "#/postulantes":
       root.appendChild(viewPostulantes());
       break;
