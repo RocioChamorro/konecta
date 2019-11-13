@@ -25,7 +25,6 @@ export const viewRegister = () => {
     </form>`;
   registerContainer.innerHTML = registerTemplate;
   registerContainer.classList.add('center');
-
   const buttonLog = registerContainer.querySelector('#registrar');
   buttonLog.addEventListener('click', () => {
     controllerRegister();

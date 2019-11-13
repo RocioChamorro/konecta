@@ -2,6 +2,8 @@ import { viewLogin } from './view/login.js';
 import { viewRegister } from './view/register.js';
 import { viewHome } from './view/home.js';
 import { viewProfile } from './view/profile.js';
+import { viewOportunidad } from './view/oportunidad.js';
+
 import { readPosts } from './model/model-firestore.js';
 
 const viewTmp = (router) => {
@@ -10,16 +12,24 @@ const viewTmp = (router) => {
   switch (router) {
     case '#/login':
       root.innerHTML = '';
-      root.appendChild(viewProfile());
+      root.appendChild(viewLogin());
       break;
     case '#/register':
       root.appendChild(viewRegister());
       break;
     case '#/home':
-      readPosts((call) => {
-        root.innerHTML = '';
-        root.appendChild(viewHome(call));
-      });
+      // readPosts((call) => {
+      //   root.innerHTML = '';
+      //   root.appendChild(viewHome(call));
+      // });
+      root.appendChild(viewHome());
+      break;
+    case '#/oportunidad':
+      // readPosts((call) => {
+      //   root.innerHTML = '';
+      //   root.appendChild(viewHome(call));
+      // });
+      root.appendChild(viewOportunidad());
       break;
     case '#/profile':
       root.appendChild(viewProfile());
