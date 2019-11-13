@@ -543,10 +543,10 @@ header {
     letter-spacing: 0.2px;
 }
 
-.main-nav li a:hover {
+/* .main-nav li a:hover {
     background: #f2ea77;
     color: #171505;
-}
+} */
 
 #toggle:checked~.navbar {
     transform: translateX(0%);
@@ -919,6 +919,13 @@ letter-spacing: 0.2px;
 }
 .margin {
     margin-bottom: 15px;
+}
+.more-post {
+    color: white;
+    font-size: 25px;
+}
+.auto {
+    width: auto;
 }
 
 
