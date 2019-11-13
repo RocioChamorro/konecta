@@ -3,7 +3,7 @@ export const viewPostulantes = () => {
     postulantesContainer.innerHTML = '';
     const postulantesTemplate = `
     <header class="header1">
-        <a href="#/home"><i class="fa fa-arrow-left blanco marginFlecha" aria-hidden="true"></i></a>
+        <a href="#/home"><img class="marginFlecha" src="../img/flecha.png"/></a>
         <label class="letraHeader">ANALISTA DE CDG - CAPACITACIÓN</label>
         <img class="img2" src="../img/ring.png"/>
     </header>
@@ -63,8 +63,6 @@ export const viewPostulantes = () => {
       <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
       
       <p><img src="../img/chat.png"/><br>Mensajes</p>
-    
-    <p><img src="../img/chat.png"/><br>Mensajes</p>
   
 </footer>
     `
