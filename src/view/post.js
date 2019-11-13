@@ -44,7 +44,7 @@ export const viewPosts = doc => {
             }" alt="imgConvocatoria">
             <button class="postular btn-compartir pointer" data-id="${doc.id}" data-area="${doc.area}" data-puesto="${
     doc.puesto
-  }" data-fecha="${doc.cierre}">
+  }" data-fecha="${doc.cierre}" data-beneficios="${doc.beneficios}" data-descripcion="${doc.descripcion}" data-requisitos="${doc.requisitos}">
               POSTULAR
             </button>
           </div>
@@ -60,14 +60,16 @@ export const viewPosts = doc => {
         const area = String(e.target.dataset.area);
         const puesto = String(e.target.dataset.puesto);
         const fecha = String(e.target.dataset.fecha);
-        console.log(fecha);
+        const beneficios = String(e.target.dataset.beneficios);
+        const descripcion = String(e.target.dataset.descripcion);
+        const requisitos = String(e.target.dataset.requisitos);
         const dniUser = currentUser();
         const modalContent = 'Genial!';
         const modalParrafo = 'Tu postulacion fue enviada.';
         const modalFooter = document.getElementById('modalFooter');
         modalFooter.classList.add('hide');
-        modalMessage(modalContent, modalParrafo, '../img/confetti.png');
-        addPostulacion(area, puesto, fecha, dniUser.email.slice(0, 8));
+        modalMessage(modalContent, modalParrafo, '/img/confetti.png');
+        addPostulacion(area, puesto, fecha, dniUser.email.slice(0, 8), beneficios, descripcion, requisitos);
       })
   );
 

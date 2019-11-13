@@ -6,10 +6,12 @@ import { viewPosts } from "./view/post.js";
 import { viewProfile } from "./view/profile.js";
 import { viewOportunidad } from "./view/oportunidad.js";
 import { viewPostulantes } from "./view/postulantes.js";
+// import { viewDetallePostsActual } from "./view/detallepostsactual.js/index.js";
 
-import {viewMisPostulaciones} from "./view/mispostulaciones.js"
 import {viewOportunidadesrh} from "./view/oportunidadesrh.js"
 
+import {viewMisPostulaciones} from "./view/mispostulaciones.js"
+import {viewDetallePostActual} from "./view/detallepostulacionactual.js"
 import { readPosts } from "./model/model-firestore.js";
 
 const viewTmp = router => {
@@ -57,6 +59,10 @@ const viewTmp = router => {
     case "#/mispostulaciones":
       root.appendChild(viewMisPostulaciones());
       break;
+    case "#/detallesMisPostulacionesActuales":
+    root.appendChild(viewDetallePostActual());
+    
+    break;
     default:
       root.innerHTML = "Hola";
       break;

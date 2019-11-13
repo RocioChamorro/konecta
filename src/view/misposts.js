@@ -1,5 +1,6 @@
 import { readPostulaciones } from '../model/model-firestore.js';
 import { currentUser } from "../model/model-firebase.js";
+import {changeRoute} from "../controller.js";
 export const viewMisPosts = () => {
   console.log('oh')
 
@@ -22,6 +23,7 @@ export const viewMisPosts = () => {
   
   homeContainer.innerHTML = homeTemplate;
   homeContainer.classList.add('flex-post');
+  homeContainer.querySelector('#verMasBtn').addEventListener('click', ()=>{changeRoute("#/detallesMisPostulacionesActuales")})
 }));
 
     return homeContainer;

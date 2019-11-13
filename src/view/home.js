@@ -36,6 +36,7 @@ const headerPost1 = (string) => {
 export const viewHome = (query) => {
   const homeContainer = document.createElement('div');
   homeContainer.innerHTML = '';
+  
   const homeTemplate = `  
   <header id="header">
     <div class="logo-bars">
