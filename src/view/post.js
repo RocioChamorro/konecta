@@ -44,6 +44,7 @@ export const viewPosts = doc => {
         
       </div>
       <a class="registro" href="#/oportunidad" id="registrate">VER OPORTUNIDAD</a>
+      <a class="registro" href="#/postulantes" id="registrate">POSTULANTES</a>
     `;
     postContainer.innerHTML = postTemplate;
     // postContainer.classList.add("");
