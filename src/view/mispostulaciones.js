@@ -26,7 +26,7 @@ export const viewMisPostulaciones = () => {
     </nav> 
   </header>
   <main>
-  <h1>Postulación Actual</h1>
+  <h1 class=''>Postulación Actual</h1>
   <div id="mainMisPostulaciones"></div>
   <section>
     <h1>Historial</h1>
