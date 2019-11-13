@@ -64,6 +64,8 @@ export const viewPosts = doc => {
         const dniUser = currentUser();
         const modalContent = 'Genial!';
         const modalParrafo = 'Tu postulacion fue enviada.';
+        const modalFooter = document.getElementById('modalFooter');
+        modalFooter.classList.add('hide');
         modalMessage(modalContent, modalParrafo, '/img/confetti.png');
         addPostulacion(area, puesto, fecha, dniUser.email.slice(0, 8));
       })
