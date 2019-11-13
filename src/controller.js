@@ -240,3 +240,5 @@ export const modalMessage = (modalContent, modalParrafo, modalImgCont) => {
     }
   });
 };
+
+

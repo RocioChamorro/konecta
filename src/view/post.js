@@ -14,7 +14,9 @@ import { viewComment } from "./comment.js";
 import { modalMessage } from "../controller.js";
 
 export const viewPosts = doc => {
-  console.log(doc);
+  console.log(doc.date);
+  console.log(typeof doc.date);
+
 
   const postContainer = document.createElement("div");
 
@@ -26,7 +28,7 @@ export const viewPosts = doc => {
         <img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/>
         <div>
         <p class="rrhh">Recursos Humanos</p>
-        <p>${doc.fecha}</p>
+        <p>${doc.date}</p>
         </div>
         </div>  
         <div class="flex-creador-privicity">
@@ -38,13 +40,11 @@ export const viewPosts = doc => {
             <p>Funciones: </p>
             <p class="margin">- ${doc.descripcion}</p>
             <img class="imgConvocatoria margin" src="${
-    doc.imagen
-    }" alt="imgConvocatoria">
-            <button class="postular btn-compartir pointer" data-id="${
-    doc.id
-    }" data-area="${doc.area}" data-puesto="${
+              doc.imagen
+            }" alt="imgConvocatoria">
+            <button class="postular btn-compartir pointer" data-id="${doc.id}" data-area="${doc.area}" data-puesto="${
     doc.puesto
-    }" data-fecha="${String(doc.fecha)}">
+  }" data-fecha="${doc.date}">
               POSTULAR
             </button>
           </div>
