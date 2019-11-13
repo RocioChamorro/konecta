@@ -1,3 +1,4 @@
+  
 /* eslint-disable no-console */
 // aqui exportaras las funciones que necesites
 import {
@@ -57,22 +58,19 @@ export const controllerLogin = () => {
 
     console.log(result);
     console.log(result.user.emailVerified);
-    // const modalContent = 'Recuerda :';
-    // const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
-    // const modalFooter = document.getElementById('modalFooter');
-    // modalFooter.classList.remove('hide');
-    // const actualizarDatos = document.getElementById('actualizar_datos');
-    // console.log(actualizarDatos);
-    //  actualizarDatos.addEventListener('click', alert('hola'));
-    // modalMessage(modalContent, modalParrafo, '/img/documento.png');
+    const modalContent = 'Recuerda :';
+    const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
+    const modalFooter = document.getElementById('modalFooter');
+    modalFooter.classList.remove('hide');
+    modalMessage(modalContent, modalParrafo, '/img/documento.png');  
 
-   changeRoute('#/home');
+     changeRoute('#/home');
 
-     if (result.user.emailVerified === false) {
+    /*  if (result.user.emailVerified === false) {
        document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';
      } else {
        changeRoute('#/home');
-     } 
+     } */
   }).catch((error) => {
     const errorMessage = error.message;
     if (dni1 === '' || password === '') {
@@ -118,7 +116,7 @@ export const controllerRegister = () => {
            <p class="ok">Te enviamos un correo electrónico para que actives tu cuenta.</p>
            <img src="../img/confeti.gif">
            <a class="ir-login" href="#/login" id="registrate">Ir a Log in</a>`; */
-            messageErrorLabel.innerHTML = '';
+             messageErrorLabel.innerHTML = '';
 
           }).catch((error) => {
             const errorCode = error.code;
@@ -210,6 +208,8 @@ export const modalMessage = (modalContent, modalParrafo, modalImgCont) => {
   const modal = document.getElementById('miModal');
   const flex = document.getElementById('flex-modal');
   const close = document.getElementById('close');
+  const actDatos = document.getElementById('actualizar_datos');
+  const postulaYa = document.getElementById('postula_ya');
   // const modalTitle = document.getElementById('modal-title');
   const textModal = document.getElementById('text-modal');
   const textTwo = document.getElementById('textTwo-modal');
@@ -219,6 +219,14 @@ export const modalMessage = (modalContent, modalParrafo, modalImgCont) => {
   textTwo.innerHTML = modalParrafo;
   modalImg.src = modalImgCont;
   close.addEventListener('click', () => {
+    modal.classList.add('hide');
+    textModal.innerHTML = '';
+  });
+  actDatos.addEventListener('click', () => {
+    modal.classList.add('hide');
+    textModal.innerHTML = '';
+  });
+  postulaYa.addEventListener('click', () => {
     modal.classList.add('hide');
     textModal.innerHTML = '';
   });

@@ -5,6 +5,7 @@ import { viewPosts } from './view/post.js';
 
 import { viewProfile } from './view/profile.js';
 import { viewOportunidad } from './view/oportunidad.js';
+import { viewPostulantes } from './view/postulantes.js';
 
 import { readPosts } from './model/model-firestore.js';
 
@@ -43,6 +44,9 @@ const viewTmp = (router) => {
       // root.innerHTML = '';
       // root.appendChild(viewPosts());
       // break;
+      case '#/postulantes':
+        root.appendChild(viewPostulantes());
+        break;
     case '#/profile':
       root.appendChild(viewProfile());
       break;
