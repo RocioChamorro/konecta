@@ -17,7 +17,7 @@
 #root {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .flex-modal {
@@ -380,6 +380,14 @@ main {
     margin: 80px 0 68px 0;
     /* margin: 100px 15px 0 15px; */
 }
+.main1{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 15px 0 15px;
+}
 
 .container-home {
     min-height: 100vh;
@@ -419,7 +427,24 @@ header {
     box-sizing: border-box;
     height: 67px;
 }
+.header1{
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
 
+.letraHeader{
+    font-size: 15px;
+    line-height: 18px;
+    margin-left: 10px;
+    display: contents;
+    color: #FFFFFF;
+}
 .circulo{
     border-color: #168D86;
     border-radius: 50%;
