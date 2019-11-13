@@ -151,7 +151,12 @@
 .colorPrincipal {
     color: #168D86;
 }
-
+.letraPostulacion{
+    font-size: 14px;
+    line-height: 16px;
+    color: #00B8AD;
+    margin-right: 10px;
+}
 .centerlogin {
     min-height: 100vh;
     /* min-width: 100vh; */
@@ -573,9 +578,21 @@ header {
 }
 
 .img-perfil {
-    border-radius: 50%;
-    
+    border-radius: 50%; 
     margin: 0 1rem 0 0;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.posicionLabel{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.posicionDiv{
+    display: flex;
+    flex-direction: row
 }
 
 .select {

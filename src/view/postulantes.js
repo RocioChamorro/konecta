@@ -30,14 +30,18 @@ export const viewPostulantes = () => {
 
     <label class="text-label">POSTULANTES</label>
     <div class="cajaPostulante">
-        <label id="imagen-perfil" for="toggle"><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/></label>
-        <label class="text-label">Fiorela Sanchez Rodriguez</label><br>
-        <a href="#/profile">Ver perfil</a>
+        <div class="posicionDiv">
+            <label id="imagen-perfil" for="toggle"><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/></label>
+            <div class="posicionLabel">
+                <label class="text-label">Fiorela Sanchez Rodriguez</label><br>
+                <a href="#/profile" class="" >Ver perfil</a>
+            </div>
+        </div>
         <div class = "caja2Postulante">
             <ul class="flex styleNone">
-                <li>Antiguedad</li>
-                <li>Presentismo</li>
-                <li>Sanciones</li>
+                <li class="letraPostulacion">Antiguedad</li>
+                <li class="letraPostulacion">Presentismo</li>
+                <li class="letraPostulacion">Sanciones</li>
             </ul>
         </div>
         <div>
