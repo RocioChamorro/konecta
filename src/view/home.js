@@ -6,6 +6,7 @@ import { currentUser } from '../model/model-firebase.js';
 import { viewOportunidad } from './oportunidad.js';
 import { viewMisPostulaciones } from './mispostulaciones.js';
 import { viewOporColaboradores } from './oportunidadesColaborador.js';
+import { viewOportunidadesrh } from './oportunidadesrh.js';
 
 export const viewHome = (query) => {
   const homeContainer = document.createElement('div');
@@ -77,7 +78,7 @@ export const viewHome = (query) => {
    btnOportunidades.addEventListener('click', () => {
     if (currentUser().email.slice(0, 8) === '77921150' || currentUser().email.slice(0, 8) === '46694326') {
       main.innerHTML = '';
-      main.appendChild(viewMisPostulaciones());
+      main.appendChild(viewOportunidadesrh());
     
     } else {
      main.appendChild(viewOporColaboradores());
