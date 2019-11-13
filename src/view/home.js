@@ -15,7 +15,7 @@ export const viewHome = (query) => {
     <input type="checkbox" class="hide" id="toggle">  
     <nav class="colorPrincipal navbar"> 
       <ul class="main-nav flex">
-         <li><a href=""><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestión humana </a></li>
+        <li><a href=""><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestión humana </a></li>
         <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
         <li><a href=""><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
         <li><a href=""><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
