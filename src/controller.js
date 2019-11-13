@@ -57,22 +57,22 @@ export const controllerLogin = () => {
 
     console.log(result);
     console.log(result.user.emailVerified);
-    const modalContent = 'Recuerda :';
-    const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
-    const modalFooter = document.getElementById('modalFooter');
-    modalFooter.classList.remove('hide');
-    const actualizarDatos = document.getElementById('actualizar_datos');
-    console.log(actualizarDatos);
-     actualizarDatos.addEventListener('click', alert('hola'));
-    modalMessage(modalContent, modalParrafo, '/img/documento.png');
+    // const modalContent = 'Recuerda :';
+    // const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
+    // const modalFooter = document.getElementById('modalFooter');
+    // modalFooter.classList.remove('hide');
+    // const actualizarDatos = document.getElementById('actualizar_datos');
+    // console.log(actualizarDatos);
+    //  actualizarDatos.addEventListener('click', alert('hola'));
+    // modalMessage(modalContent, modalParrafo, '/img/documento.png');
 
-    // changeRoute('#/home');
+   changeRoute('#/home');
 
-    /*  if (result.user.emailVerified === false) {
+     if (result.user.emailVerified === false) {
        document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';
      } else {
        changeRoute('#/home');
-     } */
+     } 
   }).catch((error) => {
     const errorMessage = error.message;
     if (dni1 === '' || password === '') {

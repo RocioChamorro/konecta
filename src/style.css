@@ -381,6 +381,7 @@ header {
 .logo-bars {
     display: flex;
     align-items: center;
+    list-style: none;
 }
 
 .logo-bars img {
