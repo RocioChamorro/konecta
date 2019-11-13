@@ -47,6 +47,7 @@ const maysFirst = (string) => {
   const resultFirst = string.charAt(0).toUpperCase() + string.slice(1);
   return resultFirst;
 };
+//LOGIN
 export const controllerLogin = () => {
   window.event.preventDefault();
   const dni1 = document.getElementById('dni').value;
@@ -58,10 +59,15 @@ export const controllerLogin = () => {
     console.log(result.user.emailVerified);
     const modalContent = 'Recuerda :';
     const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
-    
+    const modalFooter = document.getElementById('modalFooter');
+    modalFooter.classList.remove('hide');
+    const actualizarDatos = document.getElementById('actualizar_datos');
+    console.log(actualizarDatos);
+     actualizarDatos.addEventListener('click', alert('hola'));
     modalMessage(modalContent, modalParrafo, '/img/documento.png');
 
-    changeRoute('#/home');
+    // changeRoute('#/home');
+
     /*  if (result.user.emailVerified === false) {
        document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';
      } else {

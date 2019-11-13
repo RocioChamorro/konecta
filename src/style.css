@@ -104,6 +104,22 @@ body {
     width: 336px;
     height: 300px;
   }
+  .btn-footer{
+    width: 125px;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    background: #00B8AD;
+    color: white;
+    border-style: none;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1.38947px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+  }
 
 /*------------------ VIEW LOGIN -----------------------------*/
 
@@ -220,7 +236,7 @@ body {
     text-align: center;
 }
 
-.inputs, .btn-login {
+.inputs, .btn-login, .btn-footer {
     border-radius: 8px;
     padding: 10px;
     outline: none;
