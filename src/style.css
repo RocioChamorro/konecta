@@ -30,7 +30,7 @@
   }
   .modal {
     position: fixed;
-    z-index: 1;
+    z-index: 222;
     overflow: auto;
     left: 0;
     top: 0;
