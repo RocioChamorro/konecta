@@ -41,11 +41,10 @@ export const viewPosts = doc => {
               POSTULAR
             </button>
           </div>
-          
-        
         
       </div>
       <a class="registro" href="#/oportunidad" id="registrate">VER OPORTUNIDAD</a>
+      <a class="registro" href="#/postulantes" id="registrate">POSTULANTES</a>
     `;
     postContainer.innerHTML = postTemplate;
     // postContainer.classList.add("");

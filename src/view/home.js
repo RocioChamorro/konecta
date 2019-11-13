@@ -25,17 +25,6 @@ export const viewHome = (query) => {
     </nav> 
   </header>
   <main id="main">
-  
-    <!--<div class="total">
-      <div class="colunm-post">
-        <textarea class="estilotextarea" name="comentarios" required  placeholder="¿Que quieres compartir?" id="comentario"></textarea>
-        <div class= "options-post">
-          <a class="registro" href="#/oportunidad" id="registrate">OPORTUNIDAD</a>
-          <input type="submit" value="POSTULAR"class="btn-compartir pointer" id="compartir">
-        </div>
-      </div>
-      <div class="posts-content" id="posts-content"></div>
-    </div>-->
   </main>
   <footer id="footer">
     
