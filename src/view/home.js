@@ -125,7 +125,6 @@ export const viewHome = (query) => {
     header.innerHTML='';
     main.appendChild(viewMisPostulaciones());
     header.appendChild(headerPost1('Mis postulaciones'));
-
   })
  rrhh.addEventListener('click', () => {
     main.innerHTML = '';
