@@ -14,6 +14,11 @@ const addPost = (area, puesto, descripcion, antiguedad, presentismoTime, present
   cierre,
   date,
 });
+const addPostulacion = (area, puesto, cierre, id) => firebase.firestore().collection('colaboradores').doc(id).collection('postulaciones').add({
+  area: area,
+  cierre: cierre,
+  puesto: puesto,
+});
 const readPosts = (callback) => {
   firebase.firestore().collection('convocatorias').onSnapshot((datos) => {
     const array = [];
@@ -23,7 +28,16 @@ const readPosts = (callback) => {
     callback(array);
   });
 };
-
+const readPostulaciones = (id, callback) => {
+  firebase.firestore().collection('colaboradores').doc(id).collection('postulaciones')
+    .onSnapshot((datos) => {
+      const data = [];
+      datos.forEach((doc) => {
+        data.push({ id: doc.id, ...doc.data() });
+      });
+      callback(data);
+    });
+};
 const deletePost = idD => firebase.firestore().collection('posts').doc(idD).delete();
 
 const editPrivacity = (idD, newEstado) => firebase.firestore().collection('posts').doc(idD).update({
@@ -67,6 +81,8 @@ const editComment = (idD, id, newText) => firebase.firestore().collection('posts
 
 
 export {
+  addPostulacion,
+  readPostulaciones,
   addPost,
   readPosts,
   deletePost,
