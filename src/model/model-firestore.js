@@ -16,10 +16,13 @@ const addPost = (area, puesto, descripcion, antiguedad, presentismoTime, present
   imagen,
   // order: firebase.firestore.FieldValue.serverTimestamp()
 });
-const addPostulacion = (area, puesto, cierre, id) => firebase.firestore().collection('colaboradores').doc(id).collection('postulaciones').add({
+const addPostulacion = (area, puesto, cierre, id, beneficios, descripcion, requisitos) => firebase.firestore().collection('colaboradores').doc(id).collection('postulaciones').add({
   area: area,
   cierre: cierre,
   puesto: puesto,
+  beneficios: beneficios,
+  descripcion: descripcion,
+  requisitos: requisitos,
 });
 const readPosts = (callback) => {
   firebase.firestore().collection('convocatorias').onSnapshot((datos) => {

@@ -181,7 +181,10 @@ color: #168D86;
 text-align: start;
 margin: 20px 0 20px 20px;
 }
-
+.positionDiv{
+    flex-direction: column;
+    align-items: center;
+}
 .flex-form {
   display: flex;
   flex-direction: column;
@@ -551,7 +554,10 @@ header {
     margin-left: 10px;
     margin-right: 10px;
 }
-
+.btn-salir{
+    color: white;
+    text-decoration: none;
+}
 .logo-bars label {
   font-size: 20px;
   /* margin: 0.5rem; */
@@ -842,7 +848,33 @@ footer p {
   border-bottom: 1px solid rgb(192, 188, 188);
   text-align: justify;
 }
+.puesto1 {
+    padding: 25px;
+}
+.title2 {
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+/* text-align: center; */
+margin-top: 8px;
 
+color: #168D86;
+}
+.oport-puesto {
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 123.9%;
+/* or 22px */
+color: #008CC9;
+
+text-decoration-line: underline;
+
+
+}
 /*----------------------- VIEW COMMENTS ----------------------*/
 
 .container-comment {

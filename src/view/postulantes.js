@@ -48,14 +48,13 @@ export const viewPostulantes = () => {
                 <label class="text-label">ESTADO DE PROCESO</label>
                 <div class="flex">
                     <div class="circulo"></div>
-                    <div></div>
                     <div class="circulo verde"></div>
                     <div class="circulo"></div>
                     <div class="circulo"></div>
                 </div>
                 <div>
-                <button class="botones">RECHAZAR</button>
-                <button class="botones">PASA</button>
+                    <button class="botones">RECHAZAR</button>
+                    <button class="botones">PASA</button>
                 </div>
             </div>
         </div>
