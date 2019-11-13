@@ -46,7 +46,7 @@ export const viewMisPostulaciones = () => {
   
   <footer id="footerMisPostulaciones">
     
-      <p><a class="registro" href="#/posts"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
       <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
       <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
       

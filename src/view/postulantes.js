@@ -58,9 +58,11 @@ export const viewPostulantes = () => {
     </main>
     <footer id="footer">
     
-    <p><a class="registro" href="#/posts"><img src="../img/home.png"/></a><br>Inicio</p>
-    <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
-    <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
+      <p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p><img src="../img/resumen.png"/><br>Mis Postulaciones</p>
+      <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
+      
+      <p><img src="../img/chat.png"/><br>Mensajes</p>
     
     <p><img src="../img/chat.png"/><br>Mensajes</p>
   
