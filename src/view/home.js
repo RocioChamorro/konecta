@@ -32,6 +32,7 @@ export const viewHome = () => {
       </div>
       <div class="posts-content" id="posts-content"></div>
     </div>
+    <a class="registro" href="#/posts" id="registrate">VER POSTS</a>
   </main>
   <footer class="footer">
   <div class="flex">

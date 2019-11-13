@@ -1,5 +1,6 @@
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&Cormorant+Garamond|Montserrat&display=swap');
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
 * {
     font-family: sans-serif;
     letter-spacing: 0.5px; 
@@ -17,6 +18,38 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.contenido-modal {
+    width: 30%;
+  }
+
+.flex-modal {
+    width: 100%;
+    height: 100%;
+    padding-top: 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modal {
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.497);
+  }
+  .contenido-modal {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    box-shadow: 0 0 6px 0 rgb(0, 0, 0, 0.4);
+    animation-name: modal;
+    margin-top: 2%;
+  }
+
 
 /*------------------ VIEW LOGIN -----------------------------*/
 
@@ -474,6 +507,7 @@ header {
 }
 
 .comandos-post {
+    margin-bottom: 15px;
     background: #f1f1f1;
     display: flex;
     align-items: center;
@@ -628,6 +662,10 @@ header {
 .hide {
     display: none;
 }
+.imgConvocatoria{
+    height: 200px;
+    width: 350px;
+}
 
 /* OPORTUNIDADES */ 
 .tex {
@@ -704,6 +742,7 @@ header {
     .logo-bars label {
         display: none
     }
+ 
     .navbar {
         position: static;
         display: flex;
