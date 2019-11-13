@@ -3,10 +3,10 @@ import { controllerExit, createPost } from '../controller.js';
 import { viewMisPosts } from './misposts.js';
 
 export const viewMisPostulaciones = () => {
-  const homeContainer = document.createElement('div');
-  homeContainer.innerHTML = '';
-  const homeTemplate = `  
-  <header>
+  const postulacionContainer = document.createElement('div');
+  postulacionContainer.innerHTML = '';
+  const postulacionTemplate = `  
+  <!--<header>
     <div class="logo-bars">
     <label id="imagen-perfil" for="toggle"><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/></label>
     <li><input type="search" class="search"></li>
@@ -25,7 +25,7 @@ export const viewMisPostulaciones = () => {
       </ul>
     </nav> 
   </header>
-  <main>
+  <main>-->
   <div id="mainMisPostulaciones"></div>
   <section>
     <h1>Historial</h1>
@@ -42,7 +42,7 @@ export const viewMisPostulaciones = () => {
       <img src="" alt="latan">
     </div>
   </section>
-  </main>
+  <!--</main>
   
   <footer id="footerMisPostulaciones">
     
@@ -52,17 +52,17 @@ export const viewMisPostulaciones = () => {
       
       <p><img src="../img/chat.png"/><br>Mensajes</p>
     
-</footer>`;
-  homeContainer.innerHTML = homeTemplate;
-  homeContainer.classList.add('container-home');
+</footer>-->`;
+postulacionContainer.innerHTML = postulacionTemplate;
+postulacionContainer.classList.add('container-home');
 
-  const exit = homeContainer.querySelector('#cerrar');
-  const buttonCompartir = homeContainer.querySelector('#compartir');
-  const main = homeContainer.querySelector('#mainMisPostulaciones');
+  const exit = postulacionContainer.querySelector('#cerrar');
+  const buttonCompartir = postulacionContainer.querySelector('#compartir');
+  const mainPost = postulacionContainer.querySelector('#mainMisPostulaciones');
 
-  exit.addEventListener('click', controllerExit);
+  // exit.addEventListener('click', controllerExit);
 
-  main.appendChild(viewMisPosts());
+  mainPost.appendChild(viewMisPosts());
   
 
   // const toggle = homeContainer.querySelector('#toogle');
@@ -75,6 +75,6 @@ export const viewMisPostulaciones = () => {
   // buttonCompartir.addEventListener('click', createPost);
   // arrPost.forEach(obj => totalView.appendChild(viewPosts(obj)));
 
-  return homeContainer;
+  return postulacionContainer;
 };
 

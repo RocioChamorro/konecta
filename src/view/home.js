@@ -4,6 +4,7 @@ import { controllerExit, createPost } from '../controller.js';
 import { viewPosts } from './post.js';
 import { currentUser } from '../model/model-firebase.js';
 import { viewOportunidad } from './oportunidad.js';
+import { viewMisPostulaciones } from './mispostulaciones.js';
 
 export const viewHome = (query) => {
   const homeContainer = document.createElement('div');
@@ -35,7 +36,7 @@ export const viewHome = (query) => {
       <p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
       <p class="hide" id="option-rrhh"><a class="registro" ><i class="fa fa-plus-circle more-post" aria-hidden="true"></i></a><br>Nueva oportunidad</p>
 
-      <p id="option-col"><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
+      <p id="option-col" ><a class="registro" ><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
       <p><a class="registro" href="#/postulantes"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>
       
       <p><img src="../img/chat.png"/><br>Mensajes</p>
@@ -62,10 +63,14 @@ export const viewHome = (query) => {
   const rrhh = homeContainer.querySelector('#option-rrhh');
   const col = homeContainer.querySelector('#option-col');
 
+  // const misPostulations = homeContainer.querySelector('#mis-postulaciones');
 
   if(currentUser().email.slice(0,8)==='77921150' || currentUser().email.slice(0,8)==='46694326') {
     addUser.classList.remove('hide');
-    // console.log('holi');
+    
+
+    
+  
   } else {
     addUser.classList.add('hide');
   }
@@ -73,12 +78,17 @@ export const viewHome = (query) => {
   addUser.addEventListener('click', () => {
     rrhh.classList.remove('hide');
     col.classList.add('hide');
+    
   })
-
+  col.addEventListener('click', () => {
+    main.innerHTML='';
+    main.appendChild(viewMisPostulaciones());
+  })
   rrhh.addEventListener('click',() => {
     main.innerHTML='';
     main.appendChild(viewOportunidad());
   })
+ 
   // const toggle = homeContainer.querySelector('#toogle');
   // const footer = homeContainer.querySelector('#footer');
 
