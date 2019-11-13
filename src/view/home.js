@@ -7,11 +7,37 @@ import { viewOportunidad } from './oportunidad.js';
 import { viewMisPostulaciones } from './mispostulaciones.js';
 import { viewOporColaboradores } from './oportunidadesColaborador.js';
 
+const headerPost = () => {
+  const contentHeaderPost = document.createElement('div');
+  contentHeaderPost .innerHTML = '';
+  const contentHeaderPostTemplate = `
+      <a href="#/home"><img class="marginFlecha" src="../img/flecha.png"/></a>
+      <label class="letraHeader">ANALISTA DE CDG - CAPACITACIÓN</label>
+      <img class="img2" src="../img/ring.png"/>`;
+
+      contentHeaderPost .innerHTML = contentHeaderPostTemplate;
+      contentHeaderPost.classList.add('flex-headerPost')
+    return contentHeaderPost;
+}
+const headerPost1 = (string) => {
+  const contentHeaderPost = document.createElement('div');
+  contentHeaderPost .innerHTML = '';
+  const contentHeaderPostTemplate = `
+      <a href="#/home"><img class="marginFlecha margin-flecha" src="../img/flecha.png"/></a>
+      <label class="letraHeader ">${string}</label>
+   `;
+
+      contentHeaderPost .innerHTML = contentHeaderPostTemplate;
+      contentHeaderPost.classList.add('flex-headerPost')
+    return contentHeaderPost;
+} 
+
+
 export const viewHome = (query) => {
   const homeContainer = document.createElement('div');
   homeContainer.innerHTML = '';
   const homeTemplate = `  
-  <header>
+  <header id="header">
     <div class="logo-bars">
     <label id="imagen-perfil" for="toggle"><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/></label>
     <li><input type="search" class="search"></li>
@@ -52,6 +78,7 @@ export const viewHome = (query) => {
   const exit = homeContainer.querySelector('#cerrar');
   const buttonCompartir = homeContainer.querySelector('#compartir');
   const main = homeContainer.querySelector('#main');
+  const header = homeContainer.querySelector('#header');
 
   exit.addEventListener('click', controllerExit);
 
@@ -90,8 +117,11 @@ export const viewHome = (query) => {
     col.classList.add('hide');
   })
   col.addEventListener('click', () => {
-    main.innerHTML = '';
+    main.innerHTML='';
+    header.innerHTML='';
     main.appendChild(viewMisPostulaciones());
+    header.appendChild(headerPost1('Oportunidades'));
+
   })
  rrhh.addEventListener('click', () => {
     main.innerHTML = '';
