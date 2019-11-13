@@ -107,7 +107,9 @@ export const viewHome = (query) => {
       main.appendChild(viewMisPostulaciones());
     } else {
       main.innerHTML = '';
+      header.innerHTML='';
      main.appendChild(viewOporColaboradores());
+     header.appendChild(headerPost1('Oportunidades'));
     }
 
   }) 

@@ -6,7 +6,7 @@ export const viewOporColaboradores = () => {
     const oporContainer = document.createElement('div');
     oporContainer.innerHTML = '';
     const oportunidadTemplate = `  
-  <h1>Oportunidades Recientes:</h1>
+  <h1 class="oport-rec">Oportunidades Recientes:</h1>
   <div id="mainMisPostulaciones"></div>
   `;
     oporContainer.innerHTML = oportunidadTemplate;
