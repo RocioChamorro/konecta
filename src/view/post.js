@@ -21,22 +21,28 @@ export const viewPosts = doc => {
  
     postTemplate += `   
       <div class="comandos-post">
+        <div class="flex align">
+        <img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/>
         <div>
-          <div class="flex-creador-privicity ">
-            <h3>Convocatoria</h3>
-            <div>
+        <p class="rrhh">Recursos Humanos</p>
+        <p>${doc.fecha}</p>
+        </div>
+        </div>  
+        <div class="flex-creador-privicity">
+            <h3 class="margin">CONVOCATORIA</h3>
+            <div class="margin">
             <p id="nombre" class="creador">${doc.puesto}</p>
-            <p id="privacidad-no-user"><strong>Área: </strong> ${doc.area}</p>
+            <p id="privacidad-no-user">Área: ${doc.area}</p>
             </div>
-            <strong>Funciones: </strong>
-            <p>- ${doc.descripcion}</p>
-            <div><img class="imgConvocatoria" src="${doc.imagen}" alt=""></div>
+            <p>Funciones: </p>
+            <p class="margin">- ${doc.descripcion}</p>
+            <img class="imgConvocatoria margin" src="${doc.imagen}" alt="">
             <button class="btn-compartir pointer" id="">
               POSTULAR
             </button>
           </div>
-          <p class="clock"><i class="fa fa-clock-o" aria-hidden="true"></i> hora</p>
-        </div>
+          
+        
         
       </div>
       <a class="registro" href="#/oportunidad" id="registrate">VER OPORTUNIDAD</a>
