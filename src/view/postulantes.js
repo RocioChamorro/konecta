@@ -2,12 +2,12 @@ export const viewPostulantes = () => {
     const postulantesContainer = document.createElement('div');
     postulantesContainer.innerHTML = '';
     const postulantesTemplate = `
-    <header>
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        <label class="text-label">ANALISTA DE CDG - CAPACITACIÓN</label>
+    <header class="header1">
+        <a href="#/home"><i class="fa fa-arrow-left blanco marginFlecha" aria-hidden="true"></i></a>
+        <label class="letraHeader">ANALISTA DE CDG - CAPACITACIÓN</label>
         <img class="img2" src="../img/ring.png"/>
     </header>
-    <main>
+    <main class ="main1" >
     <h1 class="title-oportunidad">N postulantes</h1>
     <label class="text-label">Mostrar</label>
     <select class="inputs" id="area" >
@@ -31,6 +31,7 @@ export const viewPostulantes = () => {
     <label class="text-label">POSTULANTES</label>
     <div class="cajaPostulante">
         <label id="imagen-perfil" for="toggle"><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/></label>
+        <label class="text-label">Fiorela Sanchez Rodriguez</label><br>
         <a href="#/profile">Ver perfil</a>
         <div class = "caja2Postulante">
             <ul class="flex styleNone">
@@ -63,6 +64,8 @@ export const viewPostulantes = () => {
       
       <p><img src="../img/chat.png"/><br>Mensajes</p>
     
+    <p><img src="../img/chat.png"/><br>Mensajes</p>
+  
 </footer>
     `
     postulantesContainer.innerHTML = postulantesTemplate;
