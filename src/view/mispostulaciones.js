@@ -11,11 +11,11 @@ export const viewMisPostulaciones = () => {
   <div id="mainMisPostulaciones"></div>
   <section>
     <h1  class="oport-rec">Historial</h1>
-    <div>
+    <div class="width-hist">
       <p>Estado: Concluido</p>
-    <div>
-      Cargo: Líder Latan Unificado
-      <button>Detalle</button>
+    <div class="flex3">
+      <p>Cargo: Líder Latan Unificado</p>
+      <button class="detalle">Detalle</button>
     </div>
       <img src="" alt="latan">
     </div>
