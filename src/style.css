@@ -483,6 +483,21 @@ header {
     color: #00B8AD;
 }
 
+.encabezadoCaja{
+    background: #00B8AD;
+    border: 3px solid #00B8AD;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.btnVermas{
+    width: 92px;
+    height: 29px;
+    background: #00B8AD;
+    border-radius: 8px;
+    list-style: none;
+}
+
 .letraHeader{
     font-size: 15px;
     line-height: 18px;
