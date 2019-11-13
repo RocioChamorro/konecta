@@ -24,12 +24,15 @@ const headerPost1 = (string) => {
   const contentHeaderPost = document.createElement('div');
   contentHeaderPost .innerHTML = '';
   const contentHeaderPostTemplate = `
-      <a href="#/home"><img class="marginFlecha margin-flecha" src="../img/flecha.png"/></a>
+      <a id="atras"><img class="marginFlecha margin-flecha" src="../img/flecha.png"/></a>
       <label class="letraHeader ">${string}</label>
    `;
 
       contentHeaderPost .innerHTML = contentHeaderPostTemplate;
-      contentHeaderPost.classList.add('flex-headerPost')
+      contentHeaderPost.classList.add('flex-headerPost');
+
+      
+
     return contentHeaderPost;
 } 
 
@@ -88,6 +91,7 @@ export const viewHome = (query) => {
     main.appendChild(viewPosts(doc));
   })
 
+  
   const addUser = homeContainer.querySelector('#perfil-add');
   const rrhh = homeContainer.querySelector('#option-rrhh');
   const col = homeContainer.querySelector('#option-col');
@@ -111,7 +115,7 @@ export const viewHome = (query) => {
       main.innerHTML = '';
       header.innerHTML='';
      main.appendChild(viewOporColaboradores());
-     header.appendChild(headerPost1('Oportunidades'));
+     header.appendChild(headerPost1('Mis postulaciones'));
     }
 
   }) 
