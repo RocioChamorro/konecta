@@ -56,6 +56,11 @@ export const controllerLogin = () => {
 
     console.log(result);
     console.log(result.user.emailVerified);
+    const modalContent = 'Recuerda :';
+    const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
+    
+    modalMessage(modalContent, modalParrafo, '/img/documento.png');
+
     changeRoute('#/home');
     /*  if (result.user.emailVerified === false) {
        document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';
@@ -87,37 +92,46 @@ export const controllerRegister = () => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const passwordTwo = document.getElementById('second-password').value;
-  if (password === passwordTwo) {
-    findColaborador(dni1).then((dato) => {
-      console.log(dato);
-      if (dato === true) {
-        loginRegister(dni, password).then((response) => {
-          //  const use = currentUser();
-          updateColaborador(dni1, email);
-          // emailVerification();
-          const newName = maysFirst(email.toLowerCase());
-          document.getElementById('screen-register').innerHTML = `
-      <h1 class="register-ok">¡Bienvenid@, ${newName}!</h1>
-      <p class="ok">Te enviamos un correo electrónico para que actives tu cuenta.</p>
-      <img src="../img/confeti.gif">
-      <a class="ir-login" href="#/login" id="registrate">Ir a Log in</a>`;
-      messageErrorLabel.innerHTML = '';
+  if (dni1 !== '' && email !== '' && password !== '' && passwordTwo !== '') {
 
-        }).catch((error) => {
-          const errorCode = error.code;
-          console.log(errorCode);
-          const errorMessage = error.message;
-        });
-      }
-      else {
-        document.getElementById('error').innerHTML = 'El colaborador no esta registrado';
-      }
-    })
+    if (password === passwordTwo) {
+      findColaborador(dni1).then((dato) => {
+        console.log(dato);
+        if (dato === true) {
+          loginRegister(dni, password).then((response) => {
+            //  const use = currentUser();
+            updateColaborador(dni1, email);
+            // emailVerification();
+            const newName = maysFirst(email.toLowerCase());
+            const modalContent = '¡Bienvenid@!';
+            const modalParrafo = 'Te enviamos un correo electrónico para que actives tu cuenta.';
+            modalMessage(modalContent, modalParrafo, '/img/Group.png');
+
+            /*    document.getElementById('screen-register').innerHTML = `
+           <h1 class="register-ok">¡Bienvenid@, ${newName}!</h1>
+           <p class="ok">Te enviamos un correo electrónico para que actives tu cuenta.</p>
+           <img src="../img/confeti.gif">
+           <a class="ir-login" href="#/login" id="registrate">Ir a Log in</a>`; */
+            messageErrorLabel.innerHTML = '';
+
+          }).catch((error) => {
+            const errorCode = error.code;
+            console.log(errorCode);
+            const errorMessage = error.message;
+          });
+        }
+        else {
+          document.getElementById('error').innerHTML = 'El colaborador no esta registrado';
+        }
+      })
+    }
+    else {
+      document.getElementById('error').innerHTML = 'Las contraseñas no coinciden';
+    }
   }
   else {
-    document.getElementById('error').innerHTML = 'Las contraseñas no coinciden';
+    document.getElementById('error').innerHTML = '(*) Ingrese todos los campos';
   }
-
 };
 
 export const controllerExit = () => {
@@ -186,17 +200,18 @@ export const createPost = () => {
 };
 
 // modal
-export const modalMessage = (modalTitleTex, modalContent, color) => {
+export const modalMessage = (modalContent, modalParrafo, modalImgCont) => {
   const modal = document.getElementById('miModal');
   const flex = document.getElementById('flex-modal');
   const close = document.getElementById('close');
-  const modalTitle = document.getElementById('modal-title');
+  // const modalTitle = document.getElementById('modal-title');
   const textModal = document.getElementById('text-modal');
-  const modalHeader = document.getElementById('modal-header');
+  const textTwo = document.getElementById('textTwo-modal');
+  const modalImg = document.getElementById('img-modal');
   modal.classList.remove('hide');
-  modalTitle.innerHTML = modalTitleTex;
-  modalHeader.style.backgroundColor = color;
   textModal.innerHTML = modalContent;
+  textTwo.innerHTML = modalParrafo;
+  modalImg.src = modalImgCont;
   close.addEventListener('click', () => {
     modal.classList.add('hide');
     textModal.innerHTML = '';

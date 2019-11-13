@@ -16,26 +16,18 @@ export const viewRegister = () => {
       <label class="text-label">Repetir contraseña</label>
       <input class="inputs" type="password" name="second-password" id="second-password">
       <!--<p class="obligatorio">Campos obligatorios (*)</p>-->
+      <p class="error" id="error"></p>
       <button class="btn-login" name="button" type="submit" id="registrar">ACTIVAR CUENTA</button>
-      <button class="btn-login" name="button" type="submit" id="modal">MODAL</button>
-      <a class="registro" href="">o Iniciar sesión</a>
+      <a class="registro" href="#/login">o Iniciar sesión</a>
       <a class="bold" href="">Olvidé mi contraseña </a>
       <label class="tu-red">Tu Red profesional Konecta</label>
-      
-      <p class="error" id="error"></p>
     </form>`;
   registerContainer.innerHTML = registerTemplate;
   registerContainer.classList.add('center');
   const buttonLog = registerContainer.querySelector('#registrar');
-  const buttonModal = registerContainer.querySelector('#modal');
 
   buttonLog.addEventListener('click', () => {
     controllerRegister();
   });
-  buttonModal.addEventListener('click', () => {
-    const modalTitle = '¡Bienvenid@ a Meet and Code!';
-      const modalContent = 'Ingresaste con tu nueva cuenta';
-      modalMessage(modalTitle, modalContent, '#9da9cf');
-  })
   return registerContainer;
 };

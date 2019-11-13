@@ -1,6 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&Cormorant+Garamond|Montserrat&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&Cormorant+Garamond|Montserrat&display=swap'); */
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto&display=swap');
 * {
     font-family: sans-serif;
     letter-spacing: 0.5px; 
@@ -18,10 +19,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-.contenido-modal {
-    width: 30%;
-  }
 
 .flex-modal {
     width: 100%;
@@ -48,8 +45,65 @@ body {
     box-shadow: 0 0 6px 0 rgb(0, 0, 0, 0.4);
     animation-name: modal;
     margin-top: 2%;
+    border-radius: 10px;
+    width: 336px;
   }
-
+  @keyframes modal {
+    from {
+      top: -330px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+  .close {
+    color: #00B8AD;;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .close:hover {
+    color: #7f8c8d;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-header{
+    padding: 8px 16px;
+    color: #f2f2f2;
+  }
+  .modal-footer {
+    display: flex;
+    justify-content: space-around;
+  }
+  .text1-modal {
+    text-align: center;
+    color: #00B8AD;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .text2-modal {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #008CC9;
+    padding-top: 10px;
+  }
+  .img-modal{
+    display: block;
+    margin: auto;
+    padding-top: 30px;
+  }
+  .modal-body {
+    padding: 20px 35px 50px 35px;
+    width: 336px;
+    height: 300px;
+  }
 
 /*------------------ VIEW LOGIN -----------------------------*/
 
@@ -146,10 +200,10 @@ body {
     outline: none;
 }
 
-.btn-login:hover {
+/* .btn-login:hover {
     background: #f2ea77;
     color: #d01818;
-}
+} */
 
 .facebook, .google {
     width: 40px;
