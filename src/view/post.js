@@ -11,7 +11,7 @@ import {
 
 import { currentUser } from "../model/model-firebase.js";
 import { viewComment } from "./comment.js";
-import { timePublic } from "../controller.js";
+import { modalMessage } from "../controller.js";
 
 export const viewPosts = doc => {
   console.log(doc);
@@ -38,13 +38,13 @@ export const viewPosts = doc => {
             <p>Funciones: </p>
             <p class="margin">- ${doc.descripcion}</p>
             <img class="imgConvocatoria margin" src="${
-              doc.imagen
-            }" alt="imgConvocatoria">
+    doc.imagen
+    }" alt="imgConvocatoria">
             <button class="postular btn-compartir pointer" data-id="${
-              doc.id
-            }" data-area="${doc.area}" data-puesto="${
+    doc.id
+    }" data-area="${doc.area}" data-puesto="${
     doc.puesto
-  }" data-fecha="${String(doc.fecha)}">
+    }" data-fecha="${String(doc.fecha)}">
               POSTULAR
             </button>
           </div>
@@ -64,6 +64,9 @@ export const viewPosts = doc => {
         const fecha = String(e.target.dataset.fecha);
         console.log(fecha);
         const dniUser = currentUser();
+        const modalContent = 'Genial!';
+        const modalParrafo = 'Tu postulacion fue enviada.';
+        modalMessage(modalContent, modalParrafo, '/img/confetti.png');
         addPostulacion(area, puesto, fecha, dniUser.email.slice(0, 8));
       })
   );
