@@ -1,65 +1,79 @@
+import { controllerExit, createPost } from '../controller.js';
+// import { colaborador } from '../model/model-firebase.js';
+import { viewMisPosts } from './misposts.js';
 
-import { readPostulaciones } from '../model/model-firestore.js';
-import { currentUser } from "../model/model-firebase.js";
 export const viewMisPostulaciones = () => {
-    const header = `<header>
+  const homeContainer = document.createElement('div');
+  homeContainer.innerHTML = '';
+  const homeTemplate = `  
+  <header>
     <div class="logo-bars">
-    <a class="fas fa-arrow-left" href=""></a>
-    <h2>Mis Postulaciones</h2>
+    <label id="imagen-perfil" for="toggle"><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/></label>
+    <li><input type="search" class="search"></li>
+    <li><img class="img2" src="../img/ring.png"/></li>
     </div>
     <input type="checkbox" class="hide" id="toggle">  
-  </header>`;
-    const homeContainer = document.createElement('div');
-    homeContainer.innerHTML = ''
-    let homeTemplate=''
-    const dniUser = currentUser();
-    const dni=dniUser.email.slice(0,8);
-    console.log('dniiiiii', dni);
-    console.log(typeof(dni));
-    console.log(dniUser);
-    console.log(dniUser.email)
+    <nav class="colorPrincipal navbar"> 
+      <ul class="main-nav flex">
+      <li><a href=""><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestiòn humana </a></li>
 
-    readPostulaciones(dni,(doc)=>doc.forEach(e => {
-      console.log(e)
-         
-     homeTemplate += `  
-    <main>
-        <h1>Postulación Actual</h1>
-      <div class="">
-        <div class="">
-          <h1>${e.puesto}</h1>
-        </div>
-        <div class="posts-content" id="posts-content">
-            <p><strong>Área : </strong>${e.area}</p>
-            <p><strong>Cierre de Convocatoria : </strong>${e.cierre}</p>
-            <button>Ver más</button>
-        </div>
-
-      </div>
-    </main>
-    <section>
-    <h1>Historial</h1>
+        <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
+        <li><a href=""><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
+        <li><a href=""><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
+        <li><a href=""><img class="img-margin" src="../img/chat1.png"/>Mensajes</a></li>
+        <li><a href="#/home" id="cerrar"></a></li>
+      </ul>
+    </nav> 
+  </header>
+  <main>
+  <div id="mainMisPostulaciones"></div>
+  <section>
     <div>
-            Estado: Concluido
-            Cargo: Líder Latan Unificado
-            <button>Detalle</button>
-            <img src="" alt="latan">
+      Estado: Concluido
+      Cargo: Líder Latan Unificado
+      <button>Detalle</button>
+      <img src="" alt="latan">
     </div>
     <div>
-            Estado: Concluido
-            Cargo: Representante Latam Pass
-            <button>Detalle</button>
-            <img src="" alt="latan">
+      Estado: Concluido
+      Cargo: Representante Latam Pass
+      <button>Detalle</button>
+      <img src="" alt="latan">
     </div>
-    </section>
+  </section>
+  </main>
+  
+  <footer id="footerMisPostulaciones">
+    
+      <p><a class="registro" href="#/posts"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
+      <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
+      
+      <p><img src="../img/chat.png"/><br>Mensajes</p>
+    
+</footer>`;
+  homeContainer.innerHTML = homeTemplate;
+  homeContainer.classList.add('container-home');
 
-    <footer class="footer">
-    <div class="flex">
-        
-    </div>
-  </footer>`;
-  homeContainer.innerHTML = header + homeTemplate;
-})
-);
-    return homeContainer;
-  };
+  const exit = homeContainer.querySelector('#cerrar');
+  const buttonCompartir = homeContainer.querySelector('#compartir');
+  const main = homeContainer.querySelector('#mainMisPostulaciones');
+
+  exit.addEventListener('click', controllerExit);
+
+  main.appendChild(viewMisPosts());
+  
+
+  // const toggle = homeContainer.querySelector('#toogle');
+  // const footer = homeContainer.querySelector('#footer');
+
+  // toggle.addEventListener('click', () => {
+  //   // main.classList.remove('hide');
+  //   alert('hh');
+  // })
+  // buttonCompartir.addEventListener('click', createPost);
+  // arrPost.forEach(obj => totalView.appendChild(viewPosts(obj)));
+
+  return homeContainer;
+};
+
