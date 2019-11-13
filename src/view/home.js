@@ -54,7 +54,7 @@ export const viewHome = (query) => {
 
   const addUser = homeContainer.querySelector('#perfil-add');
 
-  if(currentUser().email.slice(0,8)==='7589295') {
+  if(currentUser().email.slice(0,8)==='75892951') {
     addUser.classList.remove('hide');
     // console.log('holi');
   } else {

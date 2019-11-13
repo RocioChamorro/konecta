@@ -28,6 +28,7 @@ export const viewMisPostulaciones = () => {
   <main>
   <div id="mainMisPostulaciones"></div>
   <section>
+    <h1>Historial</h1>
     <div>
       Estado: Concluido
       Cargo: Líder Latan Unificado
