@@ -1,10 +1,11 @@
-import { controllerExit, createPost } from '../controller.js';
+import { controllerExit, createPost, changeRoute } from '../controller.js';
 // import { colaborador } from '../model/model-firebase.js';
 // import { currentUser } from "../model/model-firebase.js";
 import { viewPosts } from './post.js';
 import { currentUser } from '../model/model-firebase.js';
 import { viewOportunidad } from './oportunidad.js';
 import { viewMisPostulaciones } from './mispostulaciones.js';
+import { viewOporColaboradores } from './oportunidadesColaborador.js';
 
 const headerPost = () => {
   const contentHeaderPost = document.createElement('div');
@@ -63,7 +64,7 @@ export const viewHome = (query) => {
       <p class="hide" id="option-rrhh"><a class="registro" ><i class="fa fa-plus-circle more-post" aria-hidden="true"></i></a><br>Nueva oportunidad</p>
 
       <p id="option-col" ><a class="registro" ><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
-      <p><a class="registro" href="#/postulantes"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>
+      <p id="oportunidades"><a class="registro"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>
       
       <p><img src="../img/chat.png"/><br>Mensajes</p>
 
@@ -81,7 +82,7 @@ export const viewHome = (query) => {
 
   exit.addEventListener('click', controllerExit);
 
-  
+
   query.forEach(doc => {
     main.appendChild(viewPosts(doc));
   })
@@ -89,23 +90,32 @@ export const viewHome = (query) => {
   const addUser = homeContainer.querySelector('#perfil-add');
   const rrhh = homeContainer.querySelector('#option-rrhh');
   const col = homeContainer.querySelector('#option-col');
+  const btnOportunidades = homeContainer.querySelector('#oportunidades');
 
   // const misPostulations = homeContainer.querySelector('#mis-postulaciones');
 
-  if(currentUser().email.slice(0,8)==='77921150' || currentUser().email.slice(0,8)==='46694326') {
+  if (currentUser().email.slice(0, 8) === '77921150' || currentUser().email.slice(0, 8) === '46694326') {
     addUser.classList.remove('hide');
-    
-
-    
-  
   } else {
     addUser.classList.add('hide');
+
   }
+
+   btnOportunidades.addEventListener('click', () => {
+    if (currentUser().email.slice(0, 8) === '77921150' || currentUser().email.slice(0, 8) === '46694326') {
+      main.innerHTML = '';
+      main.appendChild(viewMisPostulaciones());
+    
+    } else {
+     main.appendChild(viewOporColaboradores());
+      alert('colaborador')
+    }
+
+  }) 
 
   addUser.addEventListener('click', () => {
     rrhh.classList.remove('hide');
     col.classList.add('hide');
-    
   })
   col.addEventListener('click', () => {
     main.innerHTML='';
@@ -114,11 +124,12 @@ export const viewHome = (query) => {
     header.appendChild(headerPost1('Oportunidades'));
 
   })
-  rrhh.addEventListener('click',() => {
-    main.innerHTML='';
+ rrhh.addEventListener('click', () => {
+    main.innerHTML = '';
     main.appendChild(viewOportunidad());
-  })
- 
+  }) 
+
+
   // const toggle = homeContainer.querySelector('#toogle');
   // const footer = homeContainer.querySelector('#footer');
 

@@ -13,7 +13,7 @@ import {
 
 import { addPost } from './model/model-firestore.js';
 
-const changeRoute = (route) => {
+export const changeRoute = (route) => {
   window.location.hash = route;
 };
 
