@@ -1,4 +1,4 @@
-  
+
 /* eslint-disable no-console */
 // aqui exportaras las funciones que necesites
 import {
@@ -56,15 +56,28 @@ export const controllerLogin = () => {
   const password = document.getElementById('password').value;
   loginEmail(dni, password).then((result) => {
 
-    console.log(result);
-    console.log(result.user.emailVerified);
     const modalContent = 'Recuerda :';
     const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
     const modalFooter = document.getElementById('modalFooter');
     modalFooter.classList.remove('hide');
-    modalMessage(modalContent, modalParrafo, '/img/documento.png');  
+    modalMessage(modalContent, modalParrafo, '/img/documento.png');
+    // changeRoute('#/home');
 
-     changeRoute('#/home');
+    /* if (dni1 === 77921150 || dni1 === 46694326) {
+      changeRoute('#/home');
+      alert('aquiii home');
+      console.log('es rrhh');
+      const showPerfil = document.getElementById('perfil_rh');
+      console.log(showPerfil);
+      showPerfil.classList.remove('hide');
+      console.log('hiiiideeeee', showPerfil.classList.remove('hide'));
+
+    }
+    else {
+      showPerfil.classList.add('hide');
+      changeRoute('#/home');
+    } */
+    changeRoute('#/home');
 
     /*  if (result.user.emailVerified === false) {
        document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';
@@ -106,6 +119,8 @@ export const controllerRegister = () => {
             //  const use = currentUser();
             updateColaborador(dni1, email);
             // emailVerification();
+            const modalFooter = document.getElementById('modalFooter');
+            modalFooter.classList.add('hide');
             const newName = maysFirst(email.toLowerCase());
             const modalContent = '¡Bienvenid@!';
             const modalParrafo = 'Te enviamos un correo electrónico para que actives tu cuenta.';
@@ -116,7 +131,7 @@ export const controllerRegister = () => {
            <p class="ok">Te enviamos un correo electrónico para que actives tu cuenta.</p>
            <img src="../img/confeti.gif">
            <a class="ir-login" href="#/login" id="registrate">Ir a Log in</a>`; */
-             messageErrorLabel.innerHTML = '';
+            messageErrorLabel.innerHTML = '';
 
           }).catch((error) => {
             const errorCode = error.code;
