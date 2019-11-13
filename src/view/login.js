@@ -20,7 +20,6 @@ export const viewLogin = () => {
     <p class="error" id="error"></p>
     <button class= "btn-login" name="button" type="submit" id="login">INICIAR SESIÓN</button>
     <a class="registro" href="#/register" id="registrate">o Activa cuenta</a>
-    
     <label class="registro"><a class="bold" href="#/register" id="registrate">Olvidé mi cotraseña</a></label>
     <label class="tu-red">Tu Red profesional Konecta</label>
     </form>`;

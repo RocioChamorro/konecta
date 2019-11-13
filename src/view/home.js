@@ -1,5 +1,5 @@
 import { controllerExit, createPost } from '../controller.js';
-import { currentUser } from '../model/model-firebase.js';
+// import { colaborador } from '../model/model-firebase.js';
 import { viewPosts } from './post.js';
 
 export const viewHome = () => {
@@ -26,6 +26,7 @@ export const viewHome = () => {
       <div class="colunm-post">
         <textarea class="estilotextarea" name="comentarios" required  placeholder="¿Que quieres compartir?" id="comentario"></textarea>
         <div class= "options-post">
+          <a class="registro" href="#/oportunidad" id="registrate">OPORTUNIDAD</a>
           <input type="submit" value="POSTULAR"class="btn-compartir pointer" id="compartir">
         </div>
       </div>

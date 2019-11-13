@@ -163,7 +163,7 @@ body {
     display: none;
 }
 
-.inputs {
+.inputs, .time, .date, .check {
     /* width: 275px;
     margin: 2% 0;
     border: 1px solid #f2ea77;
@@ -174,7 +174,33 @@ body {
     outline: none;
     border: 2px solid #D8D8D8;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+.select-time {
+    display: flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    margin: 10px 0 20px 0;
+}
+.form-check {
+    align-self: flex-start;
+}
+.time {
+    width: 100px;
+    padding: 8px;
+    margin: 0;
+}
+.date {
+    padding: 8px;
+    width: 150px;
+    text-align: center;
+    align-self: flex-start;
+}
+.check {
+    width: 50px;
+}
+.bolder{
+    font-weight: bold;
 }
 
 .btn-login {
@@ -237,7 +263,22 @@ body {
     color: #00B8AD;
     margin: 15px 0;
 }
-
+.oportunidad {
+    width: auto;
+}
+.title-oportunidad {
+    font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 18px;
+margin-bottom: 34px;
+}
+.no-bold {
+    font-weight: normal;
+}
+.height-textarea {
+    height: 95px;
+}
 /*------------------------ VIEW REGISTER ---------------------------*/
 
 .welcome2 {
@@ -679,6 +720,12 @@ header {
     height: 200px;
     width: 350px;
 }
+
+/* OPORTUNIDADES */ 
+.tex {
+    width: 95%;
+}
+
 
 @media screen and (min-width:764px) {
     * {
