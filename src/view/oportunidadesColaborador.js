@@ -1,4 +1,4 @@
-import { controllerExit, createPost } from "../controller.js";
+// import { controllerExit, createPost } from "../controller.js";
 // import { colaborador } from '../model/model-firebase.js';
 import { viewMisPosts } from "./misposts.js";
 
@@ -28,7 +28,7 @@ export const viewOporColaboradores = () => {
   <main>-->
   <div id="mainMisPostulaciones"></div>
   <section>
-    <h1>Historial</h1>
+    <h1>COLABORADORES</h1>
     <div>
       Estado: Concluido
       Cargo: Líder Latan Unificado

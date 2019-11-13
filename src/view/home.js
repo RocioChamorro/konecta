@@ -5,7 +5,7 @@ import { viewPosts } from './post.js';
 import { currentUser } from '../model/model-firebase.js';
 import { viewOportunidad } from './oportunidad.js';
 import { viewMisPostulaciones } from './mispostulaciones.js';
-import { viewOporColaboradores } from './oportunidadesColaborador';
+import { viewOporColaboradores } from './oportunidadesColaborador.js';
 
 export const viewHome = (query) => {
   const homeContainer = document.createElement('div');
