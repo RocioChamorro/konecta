@@ -61,22 +61,6 @@ export const controllerLogin = () => {
     const modalFooter = document.getElementById('modalFooter');
     modalFooter.classList.remove('hide');
     modalMessage(modalContent, modalParrafo, '/img/documento.png');
-    // changeRoute('#/home');
-
-    /* if (dni1 === 77921150 || dni1 === 46694326) {
-      changeRoute('#/home');
-      alert('aquiii home');
-      console.log('es rrhh');
-      const showPerfil = document.getElementById('perfil_rh');
-      console.log(showPerfil);
-      showPerfil.classList.remove('hide');
-      console.log('hiiiideeeee', showPerfil.classList.remove('hide'));
-
-    }
-    else {
-      showPerfil.classList.add('hide');
-      changeRoute('#/home');
-    } */
     changeRoute('#/home');
 
     /*  if (result.user.emailVerified === false) {
