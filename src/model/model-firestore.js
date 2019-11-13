@@ -7,7 +7,7 @@ const addPost = (post, correo, id, estado, likes, date) => firebase.firestore().
   time: date,
 });
 const readPosts = (callback) => {
-  firebase.firestore().collection('posts').orderBy('time', 'desc').onSnapshot((datos) => {
+  firebase.firestore().collection('convocatorias').onSnapshot((datos) => {
     const array = [];
     datos.forEach((doc) => {
       array.push({ id: doc.id, ...doc.data() });
@@ -15,6 +15,7 @@ const readPosts = (callback) => {
     callback(array);
   });
 };
+
 const deletePost = idD => firebase.firestore().collection('posts').doc(idD).delete();
 
 const editPrivacity = (idD, newEstado) => firebase.firestore().collection('posts').doc(idD).update({
@@ -54,6 +55,9 @@ const editComment = (idD, id, newText) => firebase.firestore().collection('posts
   .update({
     comentario: newText,
   });
+
+
+
 export {
   addPost,
   readPosts,

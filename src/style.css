@@ -5,7 +5,7 @@
     letter-spacing: 0.5px;
     font-size: 13px;
     margin: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
 /* body {
@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: center;
 }
+
 
 /*------------------ VIEW LOGIN -----------------------------*/
 
@@ -450,6 +451,7 @@ header {
 }
 
 .comandos-post {
+    margin-bottom: 15px;
     background: #f1f1f1;
     display: flex;
     align-items: center;
@@ -525,12 +527,6 @@ header {
     color: #e41749;
 }
 
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .flex-comment {
     display: flex;
     flex-direction: column;
@@ -595,6 +591,9 @@ header {
     background-attachment: fixed;
     background-size: cover;
 }
+.main-nav {
+    flex-direction: column;
+}
 
 .volver {
     margin-top: 15px;
@@ -604,7 +603,14 @@ header {
 .hide {
     display: none;
 }
+.imgConvocatoria{
+    height: 200px;
+    width: 350px;
+}
 
+.flex {
+    display: flex;
+}
 @media screen and (min-width:764px) {
     * {
         font-size: 15px;
@@ -658,15 +664,12 @@ header {
         flex-direction: row;
         align-content: center;
         margin-top: 100px;
-    }
+    } 
     header {
         justify-content: space-between;
         padding: 20px 40px 20px 20px;
-    }
-    .main-nav {
-        align-items: center;
-        display: flex;
-    }
+    } 
+    
     .total {
         width: 500px;
         align-self: self-end;
@@ -674,6 +677,7 @@ header {
     .logo-bars label {
         display: none
     }
+ 
     .navbar {
         position: static;
         display: flex;

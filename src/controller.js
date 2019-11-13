@@ -5,8 +5,9 @@ import {
   loginFacebook,
   loginGoogle,
   loginRegister,
-  currentUser,
   loginOut,
+  currentUser,
+  findDni,
 } from './model/model-firebase.js';
 
 import { addPost } from './model/model-firestore.js';
@@ -15,25 +16,59 @@ const changeRoute = (route) => {
   window.location.hash = route;
 };
 
+const findColaborador = (dni1) => {
+  firebase.firestore().collection('colaboradores').doc(dni1).get().then(dni1 => {
+    if (!dni1.exists) {
+      console.log("No existe el colaborador");
+      document.getElementById('error').innerHTML = 'No existe el colaborador';
+      //Entiendo que aqui va el código para asignar el mail e imagen
+    }
+    else {
+      controllerRegister();
+      console.log("Existe el colaborador");
+    }
+  }).catch(function (error) {
+    
+    console.error("Error updating document: ", error);
+  });
+};
+
+const updateColaborador = (dni1, talentkEmail) => {
+  firebase.firestore().collection('colaboradores').doc(dni1).update({
+    Email_Personal: talentkEmail
+  })
+    .then(function () {
+      console.log("Document successfully updated!");
+    })
+    .catch(function (error) {
+      console.error("Error updating document: ", error);
+    });
+};
+
+
+
 const maysFirst = (string) => {
   const resultFirst = string.charAt(0).toUpperCase() + string.slice(1);
   return resultFirst;
 };
 export const controllerLogin = () => {
   window.event.preventDefault();
-  const email = document.getElementById('email').value;
+  const dni1 = document.getElementById('dni').value;
+  const dni = dni1 + '@grupokonecta.pe';
   const password = document.getElementById('password').value;
-  loginEmail(email, password).then((result) => {
+  loginEmail(dni, password).then((result) => {
+
     console.log(result);
     console.log(result.user.emailVerified);
-    if (result.user.emailVerified === false) {
-      document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';
-    } else {
-      changeRoute('#/home');
-    }
+    changeRoute('#/home');
+    /*  if (result.user.emailVerified === false) {
+       document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';
+     } else {
+       changeRoute('#/home');
+     } */
   }).catch((error) => {
     const errorMessage = error.message;
-    if (email === '' || password === '') {
+    if (dni1 === '' || password === '') {
       document.getElementById('error').innerHTML = 'Ingresa los campos completos';
     } else if (errorMessage) {
       document.getElementById('error').innerHTML = 'La contraseña no es válida o el usuario no está registrado.';
@@ -51,39 +86,47 @@ const emailVerification = () => {
 
 export const controllerRegister = () => {
   window.event.preventDefault();
-  const dni = document.getElementById('dni').value;
+  const dni1 = document.getElementById('dni').value;
+  const dni = dni1 + '@grupokonecta.pe'
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const passwordTwo = document.getElementById('second-password').value;
-  loginRegister(dni,email, password, passwordTwo).then((response) => {
-    console.log(response);
-    emailVerification();
-    
-      const newName = maysFirst(name.toLowerCase());
+  if (password === passwordTwo) {
+    loginRegister(dni, password).then((response) => {
+      //  const use = currentUser();
+      updateColaborador(dni1, email);
+      // emailVerification();
+      const newName = maysFirst(email.toLowerCase());
       document.getElementById('screen-register').innerHTML = `
       <h1 class="register-ok">¡Bienvenid@, ${newName}!</h1>
       <p class="ok">Te enviamos un correo electrónico para que actives tu cuenta.</p>
       <img src="../img/confeti.gif">
       <a class="ir-login" href="#/login" id="registrate">Ir a Log in</a>`;
 
-  }).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    if (errorMessage === 'The email address is badly formatted.') {
-      document.getElementById('error').innerHTML = 'Completa correctamente los campos.';
-      document.getElementById('email').value = '';
-      document.getElementById('password').value = '';
-      document.getElementById('email').classList.add('focus');
-      document.getElementById('password').classList.add('focus');
-    } else if (errorCode === 'auth/weak-password') {
-      document.getElementById('error').innerHTML = 'La contraseña debe tener 6 caracteres o más.';
-      document.getElementById('password').value = '';
-      document.getElementById('email').classList.remove('focus');
-      document.getElementById('password').classList.add('focus');
-    } else {
-      document.getElementById('error').innerHTML = 'Ya existe un registro con ésta cuenta';
-    }
-  });
+    }).catch((error) => {
+      const errorCode = error.code;
+      console.log(errorCode);
+      const errorMessage = error.message;
+      /* if (errorMessage === 'The email address is badly formatted.') {
+        document.getElementById('error').innerHTML = 'Completa correctamente los campos.';
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+        document.getElementById('email').classList.add('focus');
+        document.getElementById('password').classList.add('focus');
+      } else  */
+      /*  if (errorCode === 'auth/weak-password') {
+         document.getElementById('error').innerHTML = 'La contraseña debe tener 6 caracteres o más.';
+         document.getElementById('password').value = '';
+         document.getElementById('email').classList.remove('focus');
+         document.getElementById('password').classList.add('focus');
+       } else {
+         document.getElementById('error').innerHTML = 'Ya existe un registro con ésta cuenta';
+       } */
+    });
+  }
+  else {
+    document.getElementById('error').innerHTML = 'Las contraseñas deben coincidir';
+  }
 };
 
 export const controllerExit = () => {
@@ -149,4 +192,8 @@ export const createPost = () => {
     }).catch((error) => {
       console.log('no se agrego', error);
     });
+};
+
+export const getData = (coleccionName) => {
+  return  firebase.firestore().collection(coleccionName).get();
 };

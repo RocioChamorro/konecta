@@ -1,8 +1,12 @@
 import { viewLogin } from './view/login.js';
 import { viewRegister } from './view/register.js';
 import { viewHome } from './view/home.js';
+import { viewPosts } from './view/post.js';
+
 import { viewProfile } from './view/profile.js';
 import { readPosts } from './model/model-firestore.js';
+
+
 
 const viewTmp = (router) => {
   const root = document.getElementById('root');

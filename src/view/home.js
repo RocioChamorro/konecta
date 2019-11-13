@@ -15,7 +15,7 @@ export const viewHome = () => {
     <input type="checkbox" class="hide" id="toggle">  
     <nav class="colorPrincipal navbar">  
       <ul class="main-nav flex">
-      <li><a href="#/profile">Nombre</a></li>
+      <li><a href="#/profile">Ver perfil</a></li>
         <li><a href="">Notificaciones</a></li>
         <li><a href="#/home" id="cerrar"></a></li>
       </ul>
@@ -52,16 +52,6 @@ export const viewHome = () => {
   exit.addEventListener('click', controllerExit);
   // buttonCompartir.addEventListener('click', createPost);
   // arrPost.forEach(obj => totalView.appendChild(viewPosts(obj)));
-
-  // const menuHamburguesa = homeContainer.querySelector('#imagen-perfil');
-  // menuHamburguesa.addEventListener('click', () => {
-  //   const menuPerfil = document.createElement('div');
-  //   const hamburguesaTemplate = `<ul>
-  //   <li><button>kfgkdngkfdj</button></li>
-  //   </ul>`
-  //   menuPerfil.innerHTML = hamburguesaTemplate;
-    
-  // })
 
   return homeContainer;
 };
