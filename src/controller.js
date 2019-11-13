@@ -54,17 +54,19 @@ export const controllerLogin = () => {
   const dni1 = document.getElementById('dni').value;
   const dni = dni1 + '@grupokonecta.pe';
   const password = document.getElementById('password').value;
+  
   loginEmail(dni, password).then((result) => {
 
     console.log(result);
-    console.log(result.user.emailVerified);
+    // console.log(result.user.emailVerified);
     const modalContent = 'Recuerda :';
     const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
     const modalFooter = document.getElementById('modalFooter');
     modalFooter.classList.remove('hide');
     modalMessage(modalContent, modalParrafo, '/img/documento.png');  
-
-     changeRoute('#/home');
+    
+    
+    changeRoute('#/home');
 
     /*  if (result.user.emailVerified === false) {
        document.getElementById('error').innerHTML = 'No has verificado tu dirección de email';

@@ -1,6 +1,8 @@
 import { controllerExit, createPost } from '../controller.js';
 // import { colaborador } from '../model/model-firebase.js';
+// import { currentUser } from "../model/model-firebase.js";
 import { viewPosts } from './post.js';
+import { currentUser } from '../model/model-firebase.js';
 
 export const viewHome = (query) => {
   const homeContainer = document.createElement('div');
@@ -15,7 +17,8 @@ export const viewHome = (query) => {
     <input type="checkbox" class="hide" id="toggle">  
     <nav class="colorPrincipal navbar"> 
       <ul class="main-nav flex">
-        <li><a href=""><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestión humana </a></li>
+
+        <li class="hide" id="perfil-add"><a href=""><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestión humana </a></li>
         <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
         <li><a href=""><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
         <li><a href=""><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
@@ -30,8 +33,7 @@ export const viewHome = (query) => {
     
       <p><a class="registro" href="#/posts"><img src="../img/home.png"/></a><br>Inicio</p>
       <p><img src="../img/resumen.png"/><br>Mis Postulaciones</p>
-      <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
-      
+      <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>  
       <p><img src="../img/chat.png"/><br>Mensajes</p>
     
 </footer>`;
@@ -44,10 +46,19 @@ export const viewHome = (query) => {
 
   exit.addEventListener('click', controllerExit);
 
+  
   query.forEach(doc => {
     main.appendChild(viewPosts(doc));
   })
 
+  const addUser = homeContainer.querySelector('#perfil-add');
+
+  if(currentUser().email.slice(0,8)==='7589295') {
+    addUser.classList.remove('hide');
+    // console.log('holi');
+  } else {
+    addUser.classList.add('hide');
+  }
   // const toggle = homeContainer.querySelector('#toogle');
   // const footer = homeContainer.querySelector('#footer');
 
