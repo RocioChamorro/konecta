@@ -26,21 +26,18 @@ export const viewMisPostulaciones = () => {
     </nav> 
   </header>
   <main>-->
+  <h2 class="oport-rec" >Postulación actual</h2>
   <div id="mainMisPostulaciones"></div>
   <section>
-    <h1>Historial</h1>
-    <div>
-      Estado: Concluido
-      Cargo: Líder Latan Unificado
-      <button>Detalle</button>
-      <img src="" alt="latan">
-    </div>
-    <div>
-      Estado: Concluido
-      Cargo: Representante Latam Pass
-      <button>Detalle</button>
-      <img src="" alt="latan">
-    </div>
+    <h1  class="oport-rec">Historial</h1>
+    <div class="width-hist">
+    <p>Estado: Concluido</p>
+    <div class="flex3">
+    <p>Cargo: Líder Latan Unificado</p>
+    <button class="detalle">Detalle</button>
+  </div>
+    <img src="" alt="latan">
+  </div>
   </section>
   <!--</main>
   
