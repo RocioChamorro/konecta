@@ -37,7 +37,9 @@ export const viewPosts = doc => {
           </div>
           <p class="clock"><i class="fa fa-clock-o" aria-hidden="true"></i> hora</p>
         </div>
+        
       </div>
+      <a class="registro" href="#/oportunidad" id="registrate">VER OPORTUNIDAD</a>
     `;
     postContainer.innerHTML = postTemplate;
     // postContainer.classList.add("");
