@@ -22,11 +22,11 @@ const viewTmp = (router) => {
       root.appendChild(viewRegister());
       break;
     case '#/home':
-      // readPosts((call) => {
-      //   root.innerHTML = '';
-      //   root.appendChild(viewHome(call));
-      // });
-      root.appendChild(viewHome());
+      readPosts((call) => {
+        root.innerHTML = '';
+        root.appendChild(viewHome(call));
+      });
+      // root.appendChild(viewHome());
       break;
     case '#/oportunidad':
       // readPosts((call) => {
