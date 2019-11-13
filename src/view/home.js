@@ -21,7 +21,7 @@ export const viewHome = (query) => {
         <li class="hide" id="perfil-add"><a href=""><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestión humana </a></li>
         <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
         <li><a href=""><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
-        <li><a href=""><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
+        <li><a href="#/postulantes"><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
         <li><a href=""><img class="img-margin" src="../img/chat1.png"/>Mensajes</a></li>
         <li><a href="#/home" id="cerrar"></a></li>
       </ul>
