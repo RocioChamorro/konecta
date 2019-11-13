@@ -270,14 +270,17 @@ header {
 }
 
 .main-nav li a {
-    line-height: 25px;
-    color: white;
+    font-size: 15px;
+    line-height: 18px;
+    color:#333333;
     text-decoration: none;
     padding: 15px;
     font-weight: bold;
     border-top: 1px solid rgb(255, 255, 255, 0.5);
     align-items: center;
     display: flex;
+    text-align: center;
+    letter-spacing: 0.2px;
 }
 
 .main-nav li a:hover {
@@ -401,6 +404,7 @@ header {
     line-height: 14px;
     text-align: center;
     color: #FFFFFF;
+    position: fixed;
 }
 /*-------------------- VIEW POST -----------------------*/
 
@@ -452,10 +456,16 @@ header {
 
 .comandos-post {
     margin-bottom: 15px;
-    background: #f1f1f1;
     display: flex;
     align-items: center;
     padding: 10px 10px 0 10px;
+    width: 366px;
+    height: 476px;
+    left: 4px;
+    top: 93px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.0387511);
+    border-radius: 10px;
 }
 
 .count {
@@ -593,6 +603,8 @@ header {
 }
 .main-nav {
     flex-direction: column;
+    color: #333333;
+    background: #FFFFFF;
 }
 
 .volver {
@@ -661,7 +673,6 @@ header {
     }
     /* HOME */
     main {
-        flex-direction: row;
         align-content: center;
         margin-top: 100px;
     } 
@@ -684,6 +695,7 @@ header {
         justify-content: flex-end;
         width: auto;
         transform: translateX(0%);
+        font-size: 15px;
     }
     nav ul li {
         display: inline-block;
@@ -727,7 +739,7 @@ header {
         font-size: 14px;
     }
     .flex-creador-privicity {
-        flex-direction: row;
+        flex-direction: column;
     }
     .first-post {
         font-size: 14px;

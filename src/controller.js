@@ -16,19 +16,15 @@ const changeRoute = (route) => {
   window.location.hash = route;
 };
 
-const findColaborador = (dni1) => {
-  firebase.firestore().collection('colaboradores').doc(dni1).get().then(dni1 => {
-    if (!dni1.exists) {
-      console.log("No existe el colaborador");
-      document.getElementById('error').innerHTML = 'No existe el colaborador';
-      //Entiendo que aqui va el código para asignar el mail e imagen
+export const findColaborador = (dni1) => {
+  return firebase.firestore().collection('colaboradores').doc(dni1).get().then(dni1 => {
+    if (dni1.exists) {
+      return true
     }
     else {
-      controllerRegister();
-      console.log("Existe el colaborador");
+      return false
     }
   }).catch(function (error) {
-    
     console.error("Error updating document: ", error);
   });
 };
@@ -92,41 +88,36 @@ export const controllerRegister = () => {
   const password = document.getElementById('password').value;
   const passwordTwo = document.getElementById('second-password').value;
   if (password === passwordTwo) {
-    loginRegister(dni, password).then((response) => {
-      //  const use = currentUser();
-      updateColaborador(dni1, email);
-      // emailVerification();
-      const newName = maysFirst(email.toLowerCase());
-      document.getElementById('screen-register').innerHTML = `
+    findColaborador(dni1).then((dato) => {
+      console.log(dato);
+      if (dato === true) {
+        loginRegister(dni, password).then((response) => {
+          //  const use = currentUser();
+          updateColaborador(dni1, email);
+          // emailVerification();
+          const newName = maysFirst(email.toLowerCase());
+          document.getElementById('screen-register').innerHTML = `
       <h1 class="register-ok">¡Bienvenid@, ${newName}!</h1>
       <p class="ok">Te enviamos un correo electrónico para que actives tu cuenta.</p>
       <img src="../img/confeti.gif">
       <a class="ir-login" href="#/login" id="registrate">Ir a Log in</a>`;
+      messageErrorLabel.innerHTML = '';
 
-    }).catch((error) => {
-      const errorCode = error.code;
-      console.log(errorCode);
-      const errorMessage = error.message;
-      /* if (errorMessage === 'The email address is badly formatted.') {
-        document.getElementById('error').innerHTML = 'Completa correctamente los campos.';
-        document.getElementById('email').value = '';
-        document.getElementById('password').value = '';
-        document.getElementById('email').classList.add('focus');
-        document.getElementById('password').classList.add('focus');
-      } else  */
-      /*  if (errorCode === 'auth/weak-password') {
-         document.getElementById('error').innerHTML = 'La contraseña debe tener 6 caracteres o más.';
-         document.getElementById('password').value = '';
-         document.getElementById('email').classList.remove('focus');
-         document.getElementById('password').classList.add('focus');
-       } else {
-         document.getElementById('error').innerHTML = 'Ya existe un registro con ésta cuenta';
-       } */
-    });
+        }).catch((error) => {
+          const errorCode = error.code;
+          console.log(errorCode);
+          const errorMessage = error.message;
+        });
+      }
+      else {
+        document.getElementById('error').innerHTML = 'El colaborador no esta registrado';
+      }
+    })
   }
   else {
-    document.getElementById('error').innerHTML = 'Las contraseñas deben coincidir';
+    document.getElementById('error').innerHTML = 'Las contraseñas no coinciden';
   }
+
 };
 
 export const controllerExit = () => {
@@ -194,6 +185,27 @@ export const createPost = () => {
     });
 };
 
-export const getData = (coleccionName) => {
-  return  firebase.firestore().collection(coleccionName).get();
+// modal
+export const modalMessage = (modalTitleTex, modalContent, color) => {
+  const modal = document.getElementById('miModal');
+  const flex = document.getElementById('flex-modal');
+  const close = document.getElementById('close');
+  const modalTitle = document.getElementById('modal-title');
+  const textModal = document.getElementById('text-modal');
+  const modalHeader = document.getElementById('modal-header');
+  modal.classList.remove('hide');
+  modalTitle.innerHTML = modalTitleTex;
+  modalHeader.style.backgroundColor = color;
+  textModal.innerHTML = modalContent;
+  close.addEventListener('click', () => {
+    modal.classList.add('hide');
+    textModal.innerHTML = '';
+  });
+  window.addEventListener('click', (e) => {
+    if (e.target === flex) {
+      modal.classList.add('hide');
+      textModal.style.backgroundImage = '';
+      textModal.innerHTML = '';
+    }
+  });
 };

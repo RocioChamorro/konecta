@@ -12,18 +12,17 @@ import { currentUser } from "../model/model-firebase.js";
 import { viewComment } from "./comment.js";
 import { timePublic } from "../controller.js";
 
-export const viewPosts = query => {
-  console.log(query);
+export const viewPosts = doc => {
+  console.log(doc);
 
   const postContainer = document.createElement("div");
 
   let postTemplate = "";
-  query.forEach(doc => {
-    console.log(doc);
+ 
     postTemplate += `   
       <div class="comandos-post">
         <div>
-          <div class="flex-creador-privicity">
+          <div class="flex-creador-privicity ">
             <h3>Convocatoria</h3>
             <div>
             <p id="nombre" class="creador">${doc.puesto}</p>
@@ -32,7 +31,7 @@ export const viewPosts = query => {
             <strong>Funciones: </strong>
             <p>- ${doc.descripcion}</p>
             <div><img class="imgConvocatoria" src="${doc.imagen}" alt=""></div>
-            <button class="" id="">
+            <button class="btn-compartir pointer" id="">
               POSTULAR
             </button>
           </div>
@@ -42,6 +41,12 @@ export const viewPosts = query => {
     `;
     postContainer.innerHTML = postTemplate;
     // postContainer.classList.add("");
-  });
+
   return postContainer;
 };
+
+// const postularse = postContainer.querySelector('#postularse');
+// postularse.addEventListener('click', () => {
+//   alert('dhffjhh')
+
+// })
