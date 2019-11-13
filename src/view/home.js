@@ -8,9 +8,9 @@ export const viewHome = (query) => {
   const homeTemplate = `  
   <header>
     <div class="logo-bars">
-    <label id="imagen-perfil" for="toggle"><i class="fa fa-bars" aria-hidden="true"></i></label>
-    <li><input type="search"></li>
-    <li><img src="../img/ring.png"/></li>
+    <label id="imagen-perfil" for="toggle"><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/></label>
+    <li><input type="search" class="search"></li>
+    <li><img class="img2" src="../img/ring.png"/></li>
     </div>
     <input type="checkbox" class="hide" id="toggle">  
     <nav class="colorPrincipal navbar">  
@@ -25,6 +25,7 @@ export const viewHome = (query) => {
     </nav> 
   </header>
   <main id="main">
+  
     <!--<div class="total">
       <div class="colunm-post">
         <textarea class="estilotextarea" name="comentarios" required  placeholder="¿Que quieres compartir?" id="comentario"></textarea>
