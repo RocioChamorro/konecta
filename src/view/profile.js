@@ -5,10 +5,22 @@ export const viewProfile = () => {
   profileContainer.innerHTML = '';
   const profileTemplate = `
     <form class="form-profile">
-      <img class="img-profile" src="${currentUser().photoURL ? `${currentUser().photoURL}` : '../img/user.png'}" alt="imagen de usuario por defecto"/>
-      <label class="name-profile" id="nombre">${currentUser().displayName}</label>
-      <label class="label-profile">${currentUser().email}</label>
-      <a href="#/home" class="volver">Volver</a>
+      <img class="img-profile" src="../img/user.png" alt="imagen de usuario por defecto"/>
+      <label class="name-profile" id="nombre">Nombre</label>
+      <label class="name-profile" id="nombre">Puesto</label>
+      <label class="name-profile" id="nombre">Sobre mi</label>
+
+      <label class="label-profile">Nombres y Apellidos: </label>
+      <label class="label-profile">DNI: </label>
+      <label class="label-profile">Cargo: </label>
+
+      <div class="editar">
+      
+      <label><i class="fa fa-pencil" aria-hidden="true"></i>Editar</label>
+      <label class="label-profile">Correo: </label>
+      <label class="label-profile">Teléfono celular: </label>
+      </div>
+      <!--<a href="#/home" class="volver">Volver</a>-->
     </form>
     `;
   profileContainer.innerHTML = profileTemplate;
