@@ -44,7 +44,7 @@ export const viewPosts = doc => {
             }" alt="imgConvocatoria">
             <button class="postular btn-compartir pointer" data-id="${doc.id}" data-area="${doc.area}" data-puesto="${
     doc.puesto
-  }" data-fecha="${doc.date}">
+  }" data-fecha="${doc.cierre}">
               POSTULAR
             </button>
           </div>

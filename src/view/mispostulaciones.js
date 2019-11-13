@@ -1,10 +1,10 @@
-import { controllerExit, createPost } from '../controller.js';
+import { controllerExit, createPost } from "../controller.js";
 // import { colaborador } from '../model/model-firebase.js';
-import { viewMisPosts } from './misposts.js';
+import { viewMisPosts } from "./misposts.js";
 
 export const viewMisPostulaciones = () => {
-  const homeContainer = document.createElement('div');
-  homeContainer.innerHTML = '';
+  const homeContainer = document.createElement("div");
+  homeContainer.innerHTML = "";
   const homeTemplate = `  
   <header>
     <div class="logo-bars">
@@ -26,6 +26,7 @@ export const viewMisPostulaciones = () => {
     </nav> 
   </header>
   <main>
+  <h1>Postulación Actual</h1>
   <div id="mainMisPostulaciones"></div>
   <section>
     <h1>Historial</h1>
@@ -54,16 +55,15 @@ export const viewMisPostulaciones = () => {
     
 </footer>`;
   homeContainer.innerHTML = homeTemplate;
-  homeContainer.classList.add('container-home');
+  homeContainer.classList.add("container-home");
 
-  const exit = homeContainer.querySelector('#cerrar');
-  const buttonCompartir = homeContainer.querySelector('#compartir');
-  const main = homeContainer.querySelector('#mainMisPostulaciones');
+  const exit = homeContainer.querySelector("#cerrar");
+  const buttonCompartir = homeContainer.querySelector("#compartir");
+  const main = homeContainer.querySelector("#mainMisPostulaciones");
 
-  exit.addEventListener('click', controllerExit);
+  exit.addEventListener("click", controllerExit);
 
   main.appendChild(viewMisPosts());
-  
 
   // const toggle = homeContainer.querySelector('#toogle');
   // const footer = homeContainer.querySelector('#footer');
@@ -77,4 +77,3 @@ export const viewMisPostulaciones = () => {
 
   return homeContainer;
 };
-

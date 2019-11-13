@@ -19,26 +19,12 @@ export const viewMisPosts = () => {
       console.log(e)
          
      homeTemplate += `  
-    <main>
-        <h1>Postulación Actual</h1>
-      <div class="">
-        <div class="">
-          <h1>${e.puesto}</h1>
-        </div>
-        <div class="posts-content" id="posts-content">
-            <p><strong>Área : </strong>${e.area}</p>
-            <p><strong>Cierre de Convocatoria : </strong>${e.cierre}</p>
-            <button>Ver más</button>
-        </div>
-
-      </div>
-    </main>
-
-    <footer class="footer">
-    <div class="flex">
-        
-    </div>
-  </footer>`;
+        <div class="cards">
+          <div class="card-title"><h1>${e.puesto}</h1></div>
+          <div class="card-body" id="margin-card"><p><span class="spanTitulo">Área : </span>${e.area}</p>
+          <p><span class="spanTitulo">Cierre de Convocatoria : </span>${e.cierre}</p></div>
+          <div class="btnContainer"><button id="verMasBtn">Ver más</button></div>
+        </div>`;
   
   homeContainer.innerHTML = homeTemplate;
 }));
