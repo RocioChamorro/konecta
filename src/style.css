@@ -232,7 +232,7 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
-    padding: 0 25px;
+    /* padding: 0 25px; */
 }
 
 .logo-bars {
@@ -397,6 +397,7 @@ header {
     height: 69px;
     left: 0px;
     top: 598px;
+    padding: 0px;
     background: #168D86;
     text-decoration: none;
     list-style: none;
