@@ -13,6 +13,7 @@ import {viewOportunidadesrh} from "./view/oportunidadesrh.js"
 import {viewMisPostulaciones} from "./view/mispostulaciones.js"
 import {viewDetallePostActual} from "./view/detallepostulacionactual.js"
 import { readPosts } from "./model/model-firestore.js";
+import { headerPost1 } from './view/home.js';
 
 const viewTmp = router => {
   const root = document.getElementById("root");
@@ -29,6 +30,8 @@ const viewTmp = router => {
       readPosts(call => {
         root.innerHTML = "";
         root.appendChild(viewHome(call));
+        headerPost1(call);
+
       });
       // root.appendChild(viewHome());
       break;

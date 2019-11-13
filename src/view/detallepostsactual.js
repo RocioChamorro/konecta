@@ -19,18 +19,18 @@ export const detallesPostActual = () => {
       console.log(e)
          
      homeTemplate += `  
-        <div class="cards">
-        <h1>${e.puesto}</h1>
-          <div class="card-title"><h3>Descripciòn del puesto</h3></div>
+        <div class="puesto1">
+        <h1 class="oport-puesto">${e.puesto}</h1>
+          <div class="card-title"><h3 class="title2">Descripciòn del puesto</h3></div>
           <div class="card-body" id="margin-card">
           <p><span class="spanTitulo">Cargo : </span>${e.puesto}</p>
           <p><span class="spanTitulo">Área : </span>${e.area}</p>
-          <p><span class="spanTitulo">Fin del Proceso : </span>${e.cierre}</p></div>
-          <div class="card-title"><h3>Funciones:</h3></div>
+          <p><span class="spanTitulo class="oport-rec"">Fin del Proceso : </span>${e.cierre}</p></div>
+          <div class="card-title class="oport-rec"><h3 class="title2">Funciones:</h3></div>
           <p>${e.requisitos}</p>
-          <div class="card-title"><h3>Conocimientos:</h3></div>
+          <div class="card-title class="oport-rec"><h3 class="title2">Conocimientos:</h3></div>
           <p>${e.descripcion}</p>
-          <div class="card-title"><h3>Beneficios:</h3></div>
+          <div class="card-title class="oport-rec"><h3 class="title2">Beneficios:</h3></div>
           <p>${e.beneficios}</p>
         </div>`;
   

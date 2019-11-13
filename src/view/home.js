@@ -12,15 +12,21 @@ const headerPost = () => {
   const contentHeaderPost = document.createElement('div');
   contentHeaderPost .innerHTML = '';
   const contentHeaderPostTemplate = `
-      <a href="#/"><img class="marginFlecha" src="../img/flecha.png"/></a>
+      <a id="atras"><img class="marginFlecha" src="../img/flecha.png"/></a>
       <label class="letraHeader">ANALISTA DE CDG - CAPACITACIÓN</label>
       <img class="img2" src="../img/ring.png"/>`;
 
       contentHeaderPost .innerHTML = contentHeaderPostTemplate;
-      contentHeaderPost.classList.add('flex-headerPost')
+      contentHeaderPost.classList.add('flex-headerPost');
+      const atras = contentHeaderPost.querySelector('#atras');
+      // atras.addEventListener('click', () => {
+      //   query.forEach(doc => {
+      //     main.appendChild(viewPosts(doc));
+      //   })
+      // })
     return contentHeaderPost;
 }
-const headerPost1 = (string) => {
+export const headerPost1 = (string) => {
   const contentHeaderPost = document.createElement('div');
   contentHeaderPost .innerHTML = '';
   const contentHeaderPostTemplate = `
