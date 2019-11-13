@@ -12,7 +12,7 @@ const headerPost = () => {
   const contentHeaderPost = document.createElement('div');
   contentHeaderPost .innerHTML = '';
   const contentHeaderPostTemplate = `
-      <a href="#/home"><img class="marginFlecha" src="../img/flecha.png"/></a>
+      <a href="#/"><img class="marginFlecha" src="../img/flecha.png"/></a>
       <label class="letraHeader">ANALISTA DE CDG - CAPACITACIÓN</label>
       <img class="img2" src="../img/ring.png"/>`;
 
@@ -27,12 +27,8 @@ const headerPost1 = (string) => {
       <a id="atras"><img class="marginFlecha margin-flecha" src="../img/flecha.png"/></a>
       <label class="letraHeader ">${string}</label>
    `;
-
       contentHeaderPost .innerHTML = contentHeaderPostTemplate;
       contentHeaderPost.classList.add('flex-headerPost');
-
-      
-
     return contentHeaderPost;
 } 
 
@@ -64,7 +60,7 @@ export const viewHome = (query) => {
   </main>
   <footer id="footer">
     
-      <p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p id="home"><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
       <p class="hide" id="option-rrhh"><a class="registro" ><i class="fa fa-plus-circle more-post" aria-hidden="true"></i></a><br>Nueva oportunidad</p>
 
       <p id="option-col" ><a class="registro" ><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
@@ -72,9 +68,7 @@ export const viewHome = (query) => {
       
       <p><img src="../img/chat.png"/><br>Mensajes</p>
 
-      <!--<p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
-      <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
-      <p><a class="registro" href="#/postulantes"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>-->
+      
 </footer>`;
   homeContainer.innerHTML = homeTemplate;
   homeContainer.classList.add('container-home');
@@ -84,6 +78,8 @@ export const viewHome = (query) => {
   const main = homeContainer.querySelector('#main');
   const header = homeContainer.querySelector('#header');
 
+  const home = homeContainer.querySelector('#home');
+
   exit.addEventListener('click', controllerExit);
 
 
@@ -91,7 +87,6 @@ export const viewHome = (query) => {
     main.appendChild(viewPosts(doc));
   })
 
-  
   const addUser = homeContainer.querySelector('#perfil-add');
   const rrhh = homeContainer.querySelector('#option-rrhh');
   const col = homeContainer.querySelector('#option-col');
@@ -134,6 +129,11 @@ export const viewHome = (query) => {
     main.innerHTML = '';
     main.appendChild(viewOportunidad());
   }) 
+
+  home.addEventListener('click', () => {
+    main.innerHTML = '';
+    main.appendChild(viewHome(query));
+  })
 
   return homeContainer;
 };
