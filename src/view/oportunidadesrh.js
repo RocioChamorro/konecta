@@ -10,10 +10,21 @@ export const viewOportunidadesrh = () => {
         <main class ="main1" >
             <label class="text-label">OPORTUNIDADES</label>
             <div class="cajaPostulante">
-                <div class = "caja2Postulante encabezadoCaja">
+                <div class = "caja2Postulante encabezadoCaja">  
                     <label class="letraHeader">ANALISTA DE CDG - CAPACITACIÓN</label><br>
                 </div>
+            <div class="flex positionDiv">    
+                <div class="flex">
+                    <div class="circulo"></div>
+                    <div class="circulo"></div>
+                    <div class="circulo"></div>
+                    <div class="circulo"></div>
+                </div>
                 <button class="btnVermas"><a class=" letraHeader" href="#/postulantes">VER MÁS</button>
+            </div>    
+            
+        </main>
+    
     `
     oportunidadesrhContainer.innerHTML = oportunidadesrhTemplate;
     return oportunidadesrhContainer;
