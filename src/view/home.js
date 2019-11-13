@@ -109,7 +109,7 @@ export const viewHome = (query) => {
       main.innerHTML = '';
       header.innerHTML='';
      main.appendChild(viewOporColaboradores());
-     header.appendChild(headerPost1('Oportunidades'));
+     header.appendChild(headerPost1('Mis postulaciones'));
     }
 
   }) 
