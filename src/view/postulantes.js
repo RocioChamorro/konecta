@@ -3,22 +3,12 @@ export const viewPostulantes = () => {
     postulantesContainer.innerHTML = '';
     const postulantesTemplate = `
     <header>
-    <div class="logo-bars">
-    <label id="imagen-perfil" for="toggle"><i class="fa fa-bars" aria-hidden="true"></i></label>
-    <li><input type="search"></li>
-    <li><img src="../img/ring.png"/></li>
-    </div>
-    <input type="checkbox" class="hide" id="toggle">  
-    <nav class="colorPrincipal">  
-      <ul class="main-nav flex">
-      <li><a href="#/profile">Nombre</a></li>
-        <li><a href="">Notificaciones</a></li>
-        <li><a href="#/home" id="cerrar"></a></li>
-      </ul>
-    </nav> 
-  </header>
-  <main>
-  <h1 class="title-oportunidad">N postulantes</h1>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <label class="text-label">ANALISTA DE CDG - CAPACITACIÓN</label>
+        <img class="img2" src="../img/ring.png"/>
+    </header>
+    <main>
+    <h1 class="title-oportunidad">N postulantes</h1>
     <label class="text-label">Mostrar</label>
     <select class="inputs" id="area" >
     </select>
@@ -53,6 +43,7 @@ export const viewPostulantes = () => {
             <label class="text-label">ESTADO DE PROCESO</label>
             <div class="flex">
                 <div class="circulo"></div>
+                <div></div>
                 <div class="circulo verde"></div>
                 <div class="circulo"></div>
                 <div class="circulo"></div>
@@ -63,6 +54,16 @@ export const viewPostulantes = () => {
             </div>
         </div>
     </div>
+    </main>
+    <footer id="footer">
+    
+      <p><a class="registro" href="#/posts"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p><img src="../img/resumen.png"/><br>Mis Postulaciones</p>
+      <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
+      
+      <p><img src="../img/chat.png"/><br>Mensajes</p>
+    
+</footer>
     `
     postulantesContainer.innerHTML = postulantesTemplate;
     return postulantesContainer;
