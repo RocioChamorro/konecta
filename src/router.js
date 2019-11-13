@@ -6,7 +6,8 @@ import { viewPosts } from "./view/post.js";
 import { viewProfile } from "./view/profile.js";
 import { viewOportunidad } from "./view/oportunidad.js";
 import { viewPostulantes } from "./view/postulantes.js";
-import { viewMisPostulaciones } from "./view/mispostulaciones.js";
+
+import {viewMisPostulaciones} from "./view/mispostulaciones.js"
 
 import { readPosts } from "./model/model-firestore.js";
 
