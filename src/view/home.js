@@ -51,7 +51,7 @@ export const viewHome = (query) => {
         <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
         <li><a href="#/mispostulaciones"><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
         <li><a href="#/postulantes"><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
-        <li><a href=""><img class="img-margin" src="../img/chat1.png"/>Mensajes</a></li>
+        <li><a href="#/login"><img class="img-margin" src="../img/chat1.png"/>Salir</a></li>
         <li><a href="#/home" id="cerrar"></a></li>
       </ul>
     </nav> 
@@ -66,7 +66,7 @@ export const viewHome = (query) => {
       <p id="option-col" ><a class="registro" ><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
       <p id="oportunidades"><a class="registro"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>
       
-      <p><img src="../img/chat.png"/><br>Mensajes</p>
+      <p><a href="#/login" id="cerrar" class="btn-salir"><img src="../img/chat.png"/><br>Salir</a></p>
 
       
 </footer>`;

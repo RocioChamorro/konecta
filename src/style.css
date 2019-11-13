@@ -551,7 +551,10 @@ header {
     margin-left: 10px;
     margin-right: 10px;
 }
-
+.btn-salir{
+    color: white;
+    text-decoration: none;
+}
 .logo-bars label {
   font-size: 20px;
   /* margin: 0.5rem; */
