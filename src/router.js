@@ -6,6 +6,8 @@ import { viewPosts } from "./view/post.js";
 import { viewProfile } from "./view/profile.js";
 import { viewOportunidad } from "./view/oportunidad.js";
 import { viewPostulantes } from "./view/postulantes.js";
+import { viewDetallePostsActual } from "./view/detallepostsactual.js/index.js";
+
 
 import {viewMisPostulaciones} from "./view/mispostulaciones.js"
 
@@ -53,6 +55,9 @@ const viewTmp = router => {
     case "#/mispostulaciones":
       root.appendChild(viewMisPostulaciones());
       break;
+    case "#/detallesMisPostulacionesActuales":
+    root.appendChild(viewDetallePostsActual());
+    break;
     default:
       root.innerHTML = "Hola";
       break;

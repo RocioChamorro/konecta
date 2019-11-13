@@ -9,6 +9,7 @@ import { viewMisPostulaciones } from './mispostulaciones.js';
 export const viewHome = (query) => {
   const homeContainer = document.createElement('div');
   homeContainer.innerHTML = '';
+  
   const homeTemplate = `  
   <header>
     <div class="logo-bars">
