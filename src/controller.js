@@ -20,6 +20,7 @@ const changeRoute = (route) => {
 export const findColaborador = (dni1) => {
   return firebase.firestore().collection('colaboradores').doc(dni1).get().then(dni1 => {
     if (dni1.exists) {
+      // doc.data();
       return true
     }
     else {
@@ -239,3 +240,5 @@ export const modalMessage = (modalContent, modalParrafo, modalImgCont) => {
     }
   });
 };
+
+

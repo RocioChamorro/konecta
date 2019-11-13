@@ -3,6 +3,7 @@ import { controllerExit, createPost } from '../controller.js';
 // import { currentUser } from "../model/model-firebase.js";
 import { viewPosts } from './post.js';
 import { currentUser } from '../model/model-firebase.js';
+import { viewOportunidad } from './oportunidad.js';
 
 export const viewHome = (query) => {
   const homeContainer = document.createElement('div');
@@ -18,10 +19,10 @@ export const viewHome = (query) => {
     <nav class="colorPrincipal navbar"> 
       <ul class="main-nav flex">
 
-        <li class="hide" id="perfil-add"><a href=""><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestión humana </a></li>
+        <li class="hide" id="perfil-add"><a><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestión humana </a></li>
         <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
-        <li><a href=""><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
-        <li><a href=""><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
+        <li><a href="#/mispostulaciones"><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
+        <li><a href="#/postulantes"><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
         <li><a href=""><img class="img-margin" src="../img/chat1.png"/>Mensajes</a></li>
         <li><a href="#/home" id="cerrar"></a></li>
       </ul>
@@ -31,12 +32,17 @@ export const viewHome = (query) => {
   </main>
   <footer id="footer">
     
-      <p><a class="registro" href="#/posts"><img src="../img/home.png"/></a><br>Inicio</p>
-      <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
-      <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
+      <p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p class="hide" id="option-rrhh"><a class="registro" ><i class="fa fa-plus-circle more-post" aria-hidden="true"></i></a><br>Nueva oportunidad</p>
+
+      <p id="option-col"><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
+      <p><a class="registro" href="#/postulantes"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>
       
       <p><img src="../img/chat.png"/><br>Mensajes</p>
-    
+
+      <!--<p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
+      <p><a class="registro" href="#/postulantes"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>-->
 </footer>`;
   homeContainer.innerHTML = homeTemplate;
   homeContainer.classList.add('container-home');
@@ -53,13 +59,26 @@ export const viewHome = (query) => {
   })
 
   const addUser = homeContainer.querySelector('#perfil-add');
+  const rrhh = homeContainer.querySelector('#option-rrhh');
+  const col = homeContainer.querySelector('#option-col');
 
-  if(currentUser().email.slice(0,8)==='75892951') {
+
+  if(currentUser().email.slice(0,8)==='77921150' || currentUser().email.slice(0,8)==='46694326') {
     addUser.classList.remove('hide');
     // console.log('holi');
   } else {
     addUser.classList.add('hide');
   }
+
+  addUser.addEventListener('click', () => {
+    rrhh.classList.remove('hide');
+    col.classList.add('hide');
+  })
+
+  rrhh.addEventListener('click',() => {
+    main.innerHTML='';
+    main.appendChild(viewOportunidad());
+  })
   // const toggle = homeContainer.querySelector('#toogle');
   // const footer = homeContainer.querySelector('#footer');
 

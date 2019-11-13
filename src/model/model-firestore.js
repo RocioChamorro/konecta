@@ -1,4 +1,4 @@
-const addPost = (area, puesto, descripcion, antiguedad, presentismoTime, presentismo, sanciones, requisitos, beneficios, etapa1, etapa2, etapa3, cierre, date) => firebase.firestore().collection('convocatorias').add({
+const addPost = (area, puesto, descripcion, antiguedad, presentismoTime, presentismo, sanciones, requisitos, beneficios, etapa1, etapa2, etapa3, cierre, date, imagen) => firebase.firestore().collection('convocatorias').add({
   area,
   puesto,
   descripcion,
@@ -13,6 +13,8 @@ const addPost = (area, puesto, descripcion, antiguedad, presentismoTime, present
   etapa3,
   cierre,
   date,
+  imagen,
+  // order: firebase.firestore.FieldValue.serverTimestamp()
 });
 const addPostulacion = (area, puesto, cierre, id) => firebase.firestore().collection('colaboradores').doc(id).collection('postulaciones').add({
   area: area,

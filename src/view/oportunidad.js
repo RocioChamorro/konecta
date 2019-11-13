@@ -6,22 +6,7 @@ export const viewOportunidad = () => {
   const oportunidadContainer = document.createElement('div');
   oportunidadContainer.innerHTML = '';
   const oportunidadTemplate = `  
-  <header>
-    <div class="logo-bars">
-    <label id="imagen-perfil" for="toggle"><i class="fa fa-bars" aria-hidden="true"></i></label>
-    <li><input type="search"></li>
-    <li><img src="../img/ring.png"/></li>
-    </div>
-    <input type="checkbox" class="hide" id="toggle">  
-    <nav class="colorPrincipal">  
-      <ul class="main-nav flex">
-      <li><a href="#/profile">Nombre</a></li>
-        <li><a href="">Notificaciones</a></li>
-        <li><a href="#/home" id="cerrar"></a></li>
-      </ul>
-    </nav> 
-  </header>
-  <main>
+  
   <h1 class="title-oportunidad">NUEVA OPORTUNIDAD LABORAL</h1>
     <label class="text-label">Área solicitante</label>
     <select class="inputs" id="area" >
@@ -79,7 +64,7 @@ export const viewOportunidad = () => {
     </div>
 
     <label class="text-label">Requisitos adicionales/conocimientos</label>
-    <textarea class="inputs height-textarea" name="adicional" id="adicional"></textarea>
+    <textarea class="inputs height-textarea" name="adicional" id="requisitos"></textarea>
 
     <label class="text-label">Beneficios</label>
     <textarea class="inputs height-textarea" name="descripcion" id="beneficios"></textarea>
@@ -95,20 +80,15 @@ export const viewOportunidad = () => {
     <input class="date" type="date" id="cierre" name="" placeholder="dd/mm/aaaa">
 
     <button class="btn-login oportunidad" name="button" type="submit" id="crear-oportunidad">CREAR OPORTUNIDAD</button>
-  </main>
-  <footer class="footer">
-  <div class="flex">
-      
-  </div>
-</footer>`;
+  `;
   oportunidadContainer.innerHTML = oportunidadTemplate;
-  oportunidadContainer.classList.add('container-home');
+  oportunidadContainer.classList.add('container-home', 'auto');
 
   const exit = oportunidadContainer.querySelector('#cerrar');
   const buttonCompartir = oportunidadContainer.querySelector('#compartir');
   const totalView = oportunidadContainer.querySelector('#posts-content');
 
-  exit.addEventListener('click', controllerExit);
+  // exit.addEventListener('click', controllerExit);
 
   const area = oportunidadContainer.querySelector('#area');
   const puesto = oportunidadContainer.querySelector('#puesto');
@@ -134,7 +114,7 @@ export const viewOportunidad = () => {
     const puesto1 = puesto.value;
     const descripcion1 = descripcion.value;
     const antiguedad1 = antiguedad.value;
-    const porcentajeTime1 = presentismoTime.value;
+    const presentismoTime1 = presentismoTime.value;
     const presentismo1 = presentismo.value;
     const sanciones1 = sanciones.value;
     const requisitos1 = requisitos.value;
@@ -143,6 +123,7 @@ export const viewOportunidad = () => {
     // const check2 = etapa2.checked;
     // const check3 = etapa3.checked;
     const cierre1 = cierre.value;
+    const img = 'https://www.enfoquederecho.com/wp-content/uploads/2018/09/1__cZLHi_Zs-IhrfHSCm6EYA.jpeg';
     let arr = [];
     for(let i = 0; i< check.length; i++) {
       
@@ -153,8 +134,12 @@ export const viewOportunidad = () => {
       }  
     }
     // console.log(arr);
-  
-    addPost(area1, puesto1, descripcion1, antiguedad1, presentismoTime1, presentismo1, sanciones1, requisitos1, beneficios1, arr[0], arr[1], arr[2], cierre1, new Date())
+    const fecha = new Date();
+    const options = {
+      year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric'
+  };
+  const hora = `${fecha.toLocaleDateString("es-ES", options)}`;
+    addPost(area1, puesto1, descripcion1, antiguedad1, presentismoTime1, presentismo1, sanciones1, requisitos1, beneficios1, arr[0], arr[1], arr[2], cierre1, hora, img)
     
     
 
