@@ -44,7 +44,7 @@ export const viewPosts = doc => {
             }" alt="imgConvocatoria">
             <button class="postular btn-compartir pointer" data-id="${doc.id}" data-area="${doc.area}" data-puesto="${
     doc.puesto
-  }" data-fecha="${doc.date}">
+  }" data-fecha="${doc.cierre}">
               POSTULAR
             </button>
           </div>
@@ -52,7 +52,7 @@ export const viewPosts = doc => {
       </div>
     `;
   postContainer.innerHTML = postTemplate;
-  // postContainer.classList.add("");
+  postContainer.classList.add("misPostula");
   postContainer.querySelectorAll(".postular").forEach(
     btn =>
       console.log(btn) ||
@@ -66,7 +66,7 @@ export const viewPosts = doc => {
         const modalParrafo = 'Tu postulacion fue enviada.';
         const modalFooter = document.getElementById('modalFooter');
         modalFooter.classList.add('hide');
-        modalMessage(modalContent, modalParrafo, '/img/confetti.png');
+        modalMessage(modalContent, modalParrafo, '../img/confetti.png');
         addPostulacion(area, puesto, fecha, dniUser.email.slice(0, 8));
       })
   );

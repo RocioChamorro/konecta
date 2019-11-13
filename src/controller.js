@@ -62,7 +62,7 @@ export const controllerLogin = () => {
     const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
     const modalFooter = document.getElementById('modalFooter');
     modalFooter.classList.remove('hide');
-    modalMessage(modalContent, modalParrafo, '/img/documento.png');  
+    modalMessage(modalContent, modalParrafo, '../img/documento.png');  
        
     changeRoute('#/home');
 
@@ -111,7 +111,7 @@ export const controllerRegister = () => {
             const newName = maysFirst(email.toLowerCase());
             const modalContent = '¡Bienvenid@!';
             const modalParrafo = 'Te enviamos un correo electrónico para que actives tu cuenta.';
-            modalMessage(modalContent, modalParrafo, '/img/Group.png');
+            modalMessage(modalContent, modalParrafo, '../img/Group.png');
 
             /*    document.getElementById('screen-register').innerHTML = `
            <h1 class="register-ok">¡Bienvenid@, ${newName}!</h1>
