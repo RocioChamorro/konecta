@@ -78,10 +78,9 @@ export const viewHome = (query) => {
     if (currentUser().email.slice(0, 8) === '77921150' || currentUser().email.slice(0, 8) === '46694326') {
       main.innerHTML = '';
       main.appendChild(viewMisPostulaciones());
-    
     } else {
+      main.innerHTML = '';
      main.appendChild(viewOporColaboradores());
-      alert('colaborador')
     }
 
   }) 
@@ -98,17 +97,6 @@ export const viewHome = (query) => {
     main.innerHTML = '';
     main.appendChild(viewOportunidad());
   }) 
-
-
-  // const toggle = homeContainer.querySelector('#toogle');
-  // const footer = homeContainer.querySelector('#footer');
-
-  // toggle.addEventListener('click', () => {
-  //   // main.classList.remove('hide');
-  //   alert('hh');
-  // })
-  // buttonCompartir.addEventListener('click', createPost);
-  // arrPost.forEach(obj => totalView.appendChild(viewPosts(obj)));
 
   return homeContainer;
 };
