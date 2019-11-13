@@ -33,7 +33,7 @@ const viewTmp = router => {
       //   root.innerHTML = '';
       //   root.appendChild(viewHome(call));
       // });
-      root.appendChild(viewOportunidad());
+      // root.appendChild(viewOportunidad());
       break;
     // case '#/posts':
     //   readPosts((query) => {

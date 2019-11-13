@@ -54,13 +54,15 @@ export const controllerLogin = () => {
   const dni1 = document.getElementById('dni').value;
   const dni = dni1 + '@grupokonecta.pe';
   const password = document.getElementById('password').value;
+  
   loginEmail(dni, password).then((result) => {
 
     const modalContent = 'Recuerda :';
     const modalParrafo = 'Actualizar tus datos para contactarnos contigo';
     const modalFooter = document.getElementById('modalFooter');
     modalFooter.classList.remove('hide');
-    modalMessage(modalContent, modalParrafo, '/img/documento.png');
+    modalMessage(modalContent, modalParrafo, '/img/documento.png');  
+       
     changeRoute('#/home');
 
     /*  if (result.user.emailVerified === false) {
