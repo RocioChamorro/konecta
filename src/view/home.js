@@ -22,7 +22,7 @@ export const viewHome = (query) => {
         <li class="hide" id="perfil-add"><a><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestión humana </a></li>
         <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
         <li><a href="#/mispostulaciones"><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
-        <li><a href=""><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
+        <li><a href="#/postulantes"><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
         <li><a href=""><img class="img-margin" src="../img/chat1.png"/>Mensajes</a></li>
         <li><a href="#/home" id="cerrar"></a></li>
       </ul>
@@ -32,14 +32,17 @@ export const viewHome = (query) => {
   </main>
   <footer id="footer">
     
-      <p><a class="registro" href="#/posts"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
       <p class="hide" id="option-rrhh"><a class="registro" ><i class="fa fa-plus-circle more-post" aria-hidden="true"></i></a><br>Nueva oportunidad</p>
 
       <p id="option-col"><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
-      <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
+      <p><a class="registro" href="#/postulantes"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>
       
       <p><img src="../img/chat.png"/><br>Mensajes</p>
-    
+
+      <!--<p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
+      <p><a class="registro" href="#/postulantes"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>-->
 </footer>`;
   homeContainer.innerHTML = homeTemplate;
   homeContainer.classList.add('container-home');

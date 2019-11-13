@@ -11,7 +11,7 @@ import {
 
 import { currentUser } from "../model/model-firebase.js";
 import { viewComment } from "./comment.js";
-import { timePublic } from "../controller.js";
+import { modalMessage } from "../controller.js";
 
 export const viewPosts = doc => {
   console.log(doc.date);
@@ -50,8 +50,6 @@ export const viewPosts = doc => {
           </div>
         
       </div>
-      
-      <a class="registro" href="#/postulantes" id="registrate">POSTULANTES</a>
     `;
   postContainer.innerHTML = postTemplate;
   // postContainer.classList.add("");
@@ -64,6 +62,11 @@ export const viewPosts = doc => {
         const fecha = String(e.target.dataset.fecha);
         console.log(fecha);
         const dniUser = currentUser();
+        const modalContent = 'Genial!';
+        const modalParrafo = 'Tu postulacion fue enviada.';
+        const modalFooter = document.getElementById('modalFooter');
+        modalFooter.classList.add('hide');
+        modalMessage(modalContent, modalParrafo, '/img/confetti.png');
         addPostulacion(area, puesto, fecha, dniUser.email.slice(0, 8));
       })
   );

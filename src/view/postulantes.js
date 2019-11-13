@@ -2,23 +2,13 @@ export const viewPostulantes = () => {
     const postulantesContainer = document.createElement('div');
     postulantesContainer.innerHTML = '';
     const postulantesTemplate = `
-    <header>
-    <div class="logo-bars">
-    <label id="imagen-perfil" for="toggle"><i class="fa fa-bars" aria-hidden="true"></i></label>
-    <li><input type="search"></li>
-    <li><img src="../img/ring.png"/></li>
-    </div>
-    <input type="checkbox" class="hide" id="toggle">  
-    <nav class="colorPrincipal">  
-      <ul class="main-nav flex">
-      <li><a href="#/profile">Nombre</a></li>
-        <li><a href="">Notificaciones</a></li>
-        <li><a href="#/home" id="cerrar"></a></li>
-      </ul>
-    </nav> 
-  </header>
-  <main>
-  <h1 class="title-oportunidad">N postulantes</h1>
+    <header class="header1">
+        <a href="#/home"><i class="fa fa-arrow-left blanco marginFlecha" aria-hidden="true"></i></a>
+        <label class="letraHeader">ANALISTA DE CDG - CAPACITACIÓN</label>
+        <img class="img2" src="../img/ring.png"/>
+    </header>
+    <main class ="main1" >
+    <h1 class="title-oportunidad">N postulantes</h1>
     <label class="text-label">Mostrar</label>
     <select class="inputs" id="area" >
     </select>
@@ -41,6 +31,7 @@ export const viewPostulantes = () => {
     <label class="text-label">POSTULANTES</label>
     <div class="cajaPostulante">
         <label id="imagen-perfil" for="toggle"><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/></label>
+        <label class="text-label">Fiorela Sanchez Rodriguez</label><br>
         <a href="#/profile">Ver perfil</a>
         <div class = "caja2Postulante">
             <ul class="flex styleNone">
@@ -53,6 +44,7 @@ export const viewPostulantes = () => {
             <label class="text-label">ESTADO DE PROCESO</label>
             <div class="flex">
                 <div class="circulo"></div>
+                <div></div>
                 <div class="circulo verde"></div>
                 <div class="circulo"></div>
                 <div class="circulo"></div>
@@ -63,6 +55,18 @@ export const viewPostulantes = () => {
             </div>
         </div>
     </div>
+    </main>
+    <footer id="footer">
+    
+      <p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p><img src="../img/resumen.png"/><br>Mis Postulaciones</p>
+      <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
+      
+      <p><img src="../img/chat.png"/><br>Mensajes</p>
+    
+    <p><img src="../img/chat.png"/><br>Mensajes</p>
+  
+</footer>
     `
     postulantesContainer.innerHTML = postulantesTemplate;
     return postulantesContainer;
