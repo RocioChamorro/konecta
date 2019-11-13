@@ -37,7 +37,7 @@ export const viewMisPostulaciones = () => {
     <p>Cargo: Líder Latan Unificado</p>
     <button class="detalle">Detalle</button>
   </div>
-    <img src="" alt="latan">
+    <img src="../img/LATAM.png" alt="latan">
   </div>
   </section>
   <!--</main>
