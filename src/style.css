@@ -1,5 +1,7 @@
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&Cormorant+Garamond|Montserrat&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&Cormorant+Garamond|Montserrat&display=swap'); */
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto&display=swap');
 * {
     font-family: sans-serif;
     letter-spacing: 0.5px;
@@ -18,6 +20,90 @@
     justify-content: center;
 }
 
+.flex-modal {
+    width: 100%;
+    height: 100%;
+    padding-top: 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modal {
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.497);
+  }
+  .contenido-modal {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    box-shadow: 0 0 6px 0 rgb(0, 0, 0, 0.4);
+    animation-name: modal;
+    margin-top: 2%;
+    border-radius: 10px;
+    width: 336px;
+  }
+  @keyframes modal {
+    from {
+      top: -330px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+  .close {
+    color: #00B8AD;;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .close:hover {
+    color: #7f8c8d;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-header{
+    padding: 8px 16px;
+    color: #f2f2f2;
+  }
+  .modal-footer {
+    display: flex;
+    justify-content: space-around;
+  }
+  .text1-modal {
+    text-align: center;
+    color: #00B8AD;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .text2-modal {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #008CC9;
+    padding-top: 10px;
+  }
+  .img-modal{
+    display: block;
+    margin: auto;
+    padding-top: 30px;
+  }
+  .modal-body {
+    padding: 20px 35px 50px 35px;
+    width: 336px;
+    height: 300px;
+  }
 
 /*------------------ VIEW LOGIN -----------------------------*/
 
@@ -78,7 +164,7 @@
     display: none;
 }
 
-.inputs {
+.inputs, .time, .date, .check {
     /* width: 275px;
     margin: 2% 0;
     border: 1px solid #f2ea77;
@@ -89,7 +175,33 @@
     outline: none;
     border: 2px solid #D8D8D8;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+.select-time {
+    display: flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    margin: 10px 0 20px 0;
+}
+.form-check {
+    align-self: flex-start;
+}
+.time {
+    width: 100px;
+    padding: 8px;
+    margin: 0;
+}
+.date {
+    padding: 8px;
+    width: 150px;
+    text-align: center;
+    align-self: flex-start;
+}
+.check {
+    width: 50px;
+}
+.bolder{
+    font-weight: bold;
 }
 
 .btn-login {
@@ -115,10 +227,10 @@
     outline: none;
 }
 
-.btn-login:hover {
+/* .btn-login:hover {
     background: #f2ea77;
     color: #d01818;
-}
+} */
 
 .facebook, .google {
     width: 40px;
@@ -152,7 +264,22 @@
     color: #00B8AD;
     margin: 15px 0;
 }
-
+.oportunidad {
+    width: auto;
+}
+.title-oportunidad {
+    font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 18px;
+margin-bottom: 34px;
+}
+.no-bold {
+    font-weight: normal;
+}
+.height-textarea {
+    height: 95px;
+}
 /*------------------------ VIEW REGISTER ---------------------------*/
 
 .welcome2 {
@@ -624,6 +751,12 @@ header {
 .flex {
     display: flex;
 }
+/* OPORTUNIDADES */ 
+.tex {
+    width: 95%;
+}
+
+
 @media screen and (min-width:764px) {
     * {
         font-size: 15px;

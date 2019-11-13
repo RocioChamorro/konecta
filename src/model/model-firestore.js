@@ -1,10 +1,18 @@
-const addPost = (post, correo, id, estado, likes, date) => firebase.firestore().collection('posts').add({
-  text: post,
-  email: correo,
-  idUsuario: id,
-  privacidad: estado,
-  like: likes,
-  time: date,
+const addPost = (area, puesto, descripcion, antiguedad, presentismoTime, presentismo, sanciones, requisitos, beneficios, etapa1, etapa2, etapa3, cierre, date) => firebase.firestore().collection('convocatorias').add({
+  area,
+  puesto,
+  descripcion,
+  antiguedad,
+  presentismoTime,
+  presentismo,
+  sanciones,
+  requisitos,
+  beneficios,
+  etapa1,
+  etapa2,
+  etapa3,
+  cierre,
+  date,
 });
 const readPosts = (callback) => {
   firebase.firestore().collection('convocatorias').onSnapshot((datos) => {

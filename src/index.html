@@ -6,33 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Grupo Konecta</title>
-  <!-- <link rel="icon" type="image/png" href="../img/icon1.png" /> -->
+  <link rel="icon" type="image/png" href="../img/solok.png" />
   <link rel="stylesheet" href="style.css" />
-</head>
 
-<body class="fondo-fruit">
-  <img src="" alt="">
-  <div id="root" class="centerlogin"></div>
-  <div id="miModal" class="modal hide">
-    <div class="flex-modal" id="flex-modal">
-      <div class="contenido-modal">
-        <div id="modal-header" class="modal-header flex-modal">
-          <div id="modal-title"><h3>Modal</h3></div>
-          <span class="close" id="close">&times;</span>
-        </div>
-        <div class="modal-body">
-          <p id="text-modal" class="text-modal"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="container" class="container"></div>
   <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-functions.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
+</head>
 
+<body class="fondo-fruit">
+  <img src="" alt="">
+  <div id="root" class="centerlogin"></div>
+
+  <div id="miModal" class="modal hide">
+    <div class="flex-modal" id="flex-modal">
+      <div class="contenido-modal">
+        <div id="modal-header" class="modal-header flex-modal">
+          <div id="modal-title"></div>
+          <span class="close" id="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p id="text-modal" class="text1-modal"></p>
+          <p id="textTwo-modal" class="text2-modal"></p>
+          <img src="/img/Group.png" alt="content icon" id="img-modal" class="img-modal">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script type="module" src="./main.js"></script>
+ 
 </body>
+
 </html>

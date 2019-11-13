@@ -4,6 +4,8 @@ import { viewHome } from './view/home.js';
 import { viewPosts } from './view/post.js';
 
 import { viewProfile } from './view/profile.js';
+import { viewOportunidad } from './view/oportunidad.js';
+
 import { readPosts } from './model/model-firestore.js';
 
 
@@ -13,17 +15,25 @@ const viewTmp = (router) => {
   root.innerHTML = '';
   switch (router) {
     case '#/login':
-        root.innerHTML = '';
-        root.appendChild(viewLogin());
+      root.innerHTML = '';
+      root.appendChild(viewLogin());
       break;
     case '#/register':
       root.appendChild(viewRegister());
       break;
     case '#/home':
-      readPosts((call) => {
-        root.innerHTML = '';
-        root.appendChild(viewHome(call));
-      });
+      // readPosts((call) => {
+      //   root.innerHTML = '';
+      //   root.appendChild(viewHome(call));
+      // });
+      root.appendChild(viewHome());
+      break;
+    case '#/oportunidad':
+      // readPosts((call) => {
+      //   root.innerHTML = '';
+      //   root.appendChild(viewHome(call));
+      // });
+      root.appendChild(viewOportunidad());
       break;
     // case '#/posts':
     //   readPosts((query) => {
