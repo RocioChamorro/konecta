@@ -35,14 +35,14 @@ const viewTmp = (router) => {
       // });
       root.appendChild(viewOportunidad());
       break;
-    case '#/posts':
-      readPosts((query) => {
-        root.innerHTML = '';
-        root.appendChild(viewPosts(query));
-      });
+    // case '#/posts':
+    //   readPosts((query) => {
+    //     root.innerHTML = '';
+    //     root.appendChild(viewPosts(query));
+    //   });
       // root.innerHTML = '';
       // root.appendChild(viewPosts());
-      break;
+      // break;
     case '#/profile':
       root.appendChild(viewProfile());
       break;

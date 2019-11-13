@@ -2,7 +2,7 @@ import { controllerExit, createPost } from '../controller.js';
 // import { colaborador } from '../model/model-firebase.js';
 import { viewPosts } from './post.js';
 
-export const viewHome = () => {
+export const viewHome = (query) => {
   const homeContainer = document.createElement('div');
   homeContainer.innerHTML = '';
   const homeTemplate = `  
@@ -13,16 +13,19 @@ export const viewHome = () => {
     <li><img src="../img/ring.png"/></li>
     </div>
     <input type="checkbox" class="hide" id="toggle">  
-    <nav class="colorPrincipal">  
+    <nav class="colorPrincipal navbar">  
       <ul class="main-nav flex">
-      <li><a href="#/profile">Nombre</a></li>
-        <li><a href="">Notificaciones</a></li>
+        <li><a href="#/profile">Ver perfil</a></li>
+        <li><a href=""><img src="../img/notificacion.png"/>Notificaciones</a></li>
+        <li><a href=""><img src="../img/resumen1.png"/>Postulaciones</a></li>
+        <li><a href=""><img src="../img/oportunidades1.png"/>Oportunidades</a></li>
+        <li><a href=""><img src="../img/chat1.png"/>Mensajes</a></li>
         <li><a href="#/home" id="cerrar"></a></li>
       </ul>
     </nav> 
   </header>
-  <main>
-    <div class="total">
+  <main id="main">
+    <!--<div class="total">
       <div class="colunm-post">
         <textarea class="estilotextarea" name="comentarios" required  placeholder="¿Que quieres compartir?" id="comentario"></textarea>
         <div class= "options-post">
@@ -31,34 +34,38 @@ export const viewHome = () => {
         </div>
       </div>
       <div class="posts-content" id="posts-content"></div>
-    </div>
-    <a class="registro" href="#/posts" id="registrate">VER POSTS</a>
+    </div>-->
   </main>
-  <footer class="footer">
-  <div class="flex">
-      
-  </div>
+  <footer id="footer">
+    <ul class="footer flex">
+      <li><a class="registro" href="#/posts"><img src="../img/home.png"/></a>Inicio</li>
+      <li><img src="../img/resumen.png"/>Mis Postulaciones</li>
+      <li><img src="../img/oportunidades.png"/>Oportunidades</li>
+      <li><img src="../img/chat.png"/>Mensajes</li>
+    </ul>
 </footer>`;
   homeContainer.innerHTML = homeTemplate;
   homeContainer.classList.add('container-home');
 
   const exit = homeContainer.querySelector('#cerrar');
   const buttonCompartir = homeContainer.querySelector('#compartir');
-  const totalView = homeContainer.querySelector('#posts-content');
+  const main = homeContainer.querySelector('#main');
 
   exit.addEventListener('click', controllerExit);
+
+  query.forEach(doc => {
+    main.appendChild(viewPosts(doc));
+  })
+
+  // const toggle = homeContainer.querySelector('#toogle');
+  // const footer = homeContainer.querySelector('#footer');
+
+  // toggle.addEventListener('click', () => {
+  //   // main.classList.remove('hide');
+  //   alert('hh');
+  // })
   // buttonCompartir.addEventListener('click', createPost);
   // arrPost.forEach(obj => totalView.appendChild(viewPosts(obj)));
-
-  // const menuHamburguesa = homeContainer.querySelector('#imagen-perfil');
-  // menuHamburguesa.addEventListener('click', () => {
-  //   const menuPerfil = document.createElement('div');
-  //   const hamburguesaTemplate = `<ul>
-  //   <li><button>kfgkdngkfdj</button></li>
-  //   </ul>`
-  //   menuPerfil.innerHTML = hamburguesaTemplate;
-    
-  // })
 
   return homeContainer;
 };

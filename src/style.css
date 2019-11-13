@@ -4,15 +4,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto&display=swap');
 * {
     font-family: sans-serif;
-    letter-spacing: 0.5px; 
+    letter-spacing: 0.5px;
     font-size: 13px;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
+/* body {
     min-height: 100vh;
-}
+} */
 
 #root {
     display: flex;
@@ -129,6 +129,7 @@ body {
 
 .centerlogin {
     min-height: 100vh;
+    /* min-width: 100vh; */
 }
 
 .center {
@@ -351,12 +352,12 @@ main {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 100px 15px 0 15px;
+    /* margin: 100px 15px 0 15px; */
 }
 
 .container-home {
     min-height: 100vh;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
 }
@@ -374,7 +375,7 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
-    padding: 0 25px;
+    /* padding: 0 25px; */
 }
 
 .logo-bars {
@@ -412,14 +413,17 @@ header {
 }
 
 .main-nav li a {
-    line-height: 25px;
-    color: white;
+    font-size: 15px;
+    line-height: 18px;
+    color:#333333;
     text-decoration: none;
     padding: 15px;
     font-weight: bold;
     border-top: 1px solid rgb(255, 255, 255, 0.5);
     align-items: center;
     display: flex;
+    text-align: center;
+    letter-spacing: 0.2px;
 }
 
 .main-nav li a:hover {
@@ -430,6 +434,8 @@ header {
 #toggle:checked~.navbar {
     transform: translateX(0%);
 }
+
+
 
 /* CONTENEDOR DE USUARIO */
 
@@ -461,18 +467,16 @@ header {
 
 /* BANDEJA PARA POSTEAR */
 
-.total {
-    width: 100%;
-}
+
 
 .colunm-post {
-    width: 366px;
-    height: 476px;
-    left: 4px;
-    top: 93px;
+    /* width: 366px; */
+    /* height: 476px; */
+    /* left: 4px; */
+    /* top: 93px; */
     background: #FFFFFF;
-    box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.0387511);
-    border-radius: 10px;
+    /* box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.0387511); */
+    /* border-radius: 10px; */
 }
 
 .estilotextarea {
@@ -527,7 +531,25 @@ header {
 .posts-content {
     margin-top: 30px;
 }
-
+.margen{
+    margin-left: 35px;
+    margin-right: 35px;
+}
+.footer{
+    width: 380px;
+    height: 69px;
+    left: 0px;
+    top: 598px;
+    padding: 0px;
+    background: #168D86;
+    text-decoration: none;
+    list-style: none;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    position: fixed;
+}
 /*-------------------- VIEW POST -----------------------*/
 
 .container-posts {
@@ -578,10 +600,16 @@ header {
 
 .comandos-post {
     margin-bottom: 15px;
-    background: #f1f1f1;
     display: flex;
     align-items: center;
     padding: 10px 10px 0 10px;
+    width: 366px;
+    height: 476px;
+    left: 4px;
+    top: 93px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.0387511);
+    border-radius: 10px;
 }
 
 .count {
@@ -653,12 +681,6 @@ header {
     color: #e41749;
 }
 
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .flex-comment {
     display: flex;
     flex-direction: column;
@@ -723,6 +745,11 @@ header {
     background-attachment: fixed;
     background-size: cover;
 }
+.main-nav {
+    flex-direction: column;
+    color: #333333;
+    background: #FFFFFF;
+}
 
 .volver {
     margin-top: 15px;
@@ -737,6 +764,9 @@ header {
     width: 350px;
 }
 
+.flex {
+    display: flex;
+}
 /* OPORTUNIDADES */ 
 .tex {
     width: 95%;
@@ -793,18 +823,14 @@ header {
     }
     /* HOME */
     main {
-        flex-direction: row;
         align-content: center;
         margin-top: 100px;
-    }
+    } 
     header {
         justify-content: space-between;
         padding: 20px 40px 20px 20px;
-    }
-    .main-nav {
-        align-items: center;
-        display: flex;
-    }
+    } 
+    
     .total {
         width: 500px;
         align-self: self-end;
@@ -819,6 +845,7 @@ header {
         justify-content: flex-end;
         width: auto;
         transform: translateX(0%);
+        font-size: 15px;
     }
     nav ul li {
         display: inline-block;
@@ -862,7 +889,7 @@ header {
         font-size: 14px;
     }
     .flex-creador-privicity {
-        flex-direction: row;
+        flex-direction: column;
     }
     .first-post {
         font-size: 14px;
