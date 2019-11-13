@@ -14,8 +14,9 @@ export const viewHome = (query) => {
     </div>
     <input type="checkbox" class="hide" id="toggle">  
     <nav class="colorPrincipal navbar"> 
-    
       <ul class="main-nav flex">
+      <li><a href=""><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestiòn humana </a></li>
+
         <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
         <li><a href=""><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
         <li><a href=""><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
@@ -25,17 +26,6 @@ export const viewHome = (query) => {
     </nav> 
   </header>
   <main id="main">
-  
-    <!--<div class="total">
-      <div class="colunm-post">
-        <textarea class="estilotextarea" name="comentarios" required  placeholder="¿Que quieres compartir?" id="comentario"></textarea>
-        <div class= "options-post">
-          <a class="registro" href="#/oportunidad" id="registrate">OPORTUNIDAD</a>
-          <input type="submit" value="POSTULAR"class="btn-compartir pointer" id="compartir">
-        </div>
-      </div>
-      <div class="posts-content" id="posts-content"></div>
-    </div>-->
   </main>
   <footer id="footer">
     

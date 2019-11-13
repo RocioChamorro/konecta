@@ -41,8 +41,6 @@ export const viewPosts = doc => {
               POSTULAR
             </button>
           </div>
-          
-        
         
       </div>
       <a class="registro" href="#/oportunidad" id="registrate">VER OPORTUNIDAD</a>
