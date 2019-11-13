@@ -52,7 +52,7 @@ export const viewPosts = doc => {
       </div>
     `;
   postContainer.innerHTML = postTemplate;
-  // postContainer.classList.add("");
+  postContainer.classList.add("misPostula");
   postContainer.querySelectorAll(".postular").forEach(
     btn =>
       console.log(btn) ||

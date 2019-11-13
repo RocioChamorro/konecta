@@ -1,6 +1,6 @@
 import { readPostulaciones } from '../model/model-firestore.js';
 import { currentUser } from "../model/model-firebase.js";
-export const viewDetallePostsActual = () => {
+export const detallesPostActual = () => {
   console.log('oh')
   //   const header = `<header>
   //   <div class="logo-bars">

@@ -150,7 +150,12 @@
 .colorPrincipal {
   color: #168d86;
 }
-
+.letraPostulacion{
+    font-size: 14px;
+    line-height: 16px;
+    color: #00B8AD;
+    margin-right: 10px;
+}
 .centerlogin {
   min-height: 100vh;
   /* min-width: 100vh; */
@@ -160,6 +165,22 @@
   text-align: center;
   width: 80%;
 }
+.flex-headerPost {
+    display: flex;
+    align-items: center;
+}
+.oport-rec {
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+text-align: center;
+
+color: #168D86;
+text-align: start;
+margin: 20px 0 20px 20px;
+}
 
 .flex-form {
   display: flex;
@@ -167,6 +188,11 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+.flex-post {
+    display: flex;
+    align-items: center;
+    flex-direction: column;;
 }
 
 .welcome {
@@ -548,7 +574,12 @@ header {
   text-align: center;
   letter-spacing: 0.2px;
 }
-
+.misPostula{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 /* .main-nav li a:hover {
     background: #f2ea77;
     color: #171505;
@@ -579,9 +610,21 @@ header {
 }
 
 .img-perfil {
-  border-radius: 50%;
+    border-radius: 50%; 
+    margin: 0 1rem 0 0;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.posicionLabel{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
 
-  margin: 0 1rem 0 0;
+.posicionDiv{
+    display: flex;
+    flex-direction: row
 }
 
 .select {
@@ -935,6 +978,17 @@ h3,
     flex-direction: column;
 
 }
+.card-puesto {
+    padding: 20px 0;
+    
+}
+.card-title {
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 18px;
+}
 .cards .card-title {
     font-size: 15px;
     line-height: 18px;
@@ -944,12 +998,13 @@ h3,
     text-align: center;
 }
 #margin-card {
-    margin: 10%;
+    margin: 20px;
 }
 .btnContainer {
     display: flex;
     justify-content: center;
 }
+
 
 .card .card-body {
     font-size: 15px;
@@ -957,11 +1012,19 @@ h3,
     box-sizing: border-box;
     border-radius: 10px;
 }
+.card-body p {
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+}
 .spanTitulo{
     color: #979797;
 }
 #verMasBtn {
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    border-style: none;
     width: 52%;
     height: 40px;
     color: #FFFFFF;
@@ -972,6 +1035,10 @@ h3,
     background: #00B8AD;
     border-radius: 10px;
 }
+.margin-flecha {
+    margin-left: -100px;
+}
+
 
 @media screen and (min-width: 764px) {
   * {
@@ -1114,6 +1181,5 @@ h3,
 .auto {
     width: auto;
 }
-
 
 

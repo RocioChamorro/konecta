@@ -1,11 +1,11 @@
+import {detallesPostActual} from "../view/detallepostsactual.js"
 
-import { viewMisPosts } from "./misposts.js";
-
-export const viewMisPostulaciones = () => {
+export const viewDetallePostActual = () => {
   const postulacionContainer = document.createElement('div');
   postulacionContainer.innerHTML = '';
+  
   const postulacionTemplate = `  
-  <!--<header>
+  <header id="header">
     <div class="logo-bars">
     <label id="imagen-perfil" for="toggle"><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/></label>
     <li><input type="search" class="search"></li>
@@ -14,44 +14,32 @@ export const viewMisPostulaciones = () => {
     <input type="checkbox" class="hide" id="toggle">  
     <nav class="colorPrincipal navbar"> 
       <ul class="main-nav flex">
-      <li><a href=""><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestiòn humana </a></li>
 
+        <li class="hide" id="perfil-add"><a><img class="img-perfil" src="../img/Oval.png" alt="foto de perfil"/> Gestión humana </a></li>
         <li><a href=""><img class="img-margin" src="../img/notificacion.png"/>Notificaciones</a></li>
-        <li><a href=""><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
-        <li><a href=""><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
+        <li><a href="#/mispostulaciones"><img class="img-margin" src="../img/resumen1.png"/>Postulaciones</a></li>
+        <li><a href="#/postulantes"><img class="img-margin" src="../img/oportunidades1.png"/>Oportunidades</a></li>
         <li><a href=""><img class="img-margin" src="../img/chat1.png"/>Mensajes</a></li>
         <li><a href="#/home" id="cerrar"></a></li>
       </ul>
     </nav> 
   </header>
-  <main>-->
-  <div id="mainMisPostulaciones"></div>
-  <section>
-    <h1>Historial</h1>
-    <div>
-      Estado: Concluido
-      Cargo: Líder Latan Unificado
-      <button>Detalle</button>
-      <img src="" alt="latan">
-    </div>
-    <div>
-      Estado: Concluido
-      Cargo: Representante Latam Pass
-      <button>Detalle</button>
-      <img src="" alt="latan">
-    </div>
-  </section>
-  <!--</main>
-  
-  <footer id="footerMisPostulaciones">
+  <main id="mainMisPostulaciones">
+  </main>
+  <footer id="footer">
     
       <p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
-      <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
-      <p><img src="../img/oportunidades.png"/><br>Oportunidades</p>
+      <p class="hide" id="option-rrhh"><a class="registro" ><i class="fa fa-plus-circle more-post" aria-hidden="true"></i></a><br>Nueva oportunidad</p>
+
+      <p id="option-col" ><a class="registro" ><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
+      <p id="oportunidades"><a class="registro"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>
       
       <p><img src="../img/chat.png"/><br>Mensajes</p>
-    
-</footer>-->`;
+
+      <!--<p><a class="registro" href="#/home"><img src="../img/home.png"/></a><br>Inicio</p>
+      <p><a class="registro" href="#/mispostulaciones"><img src="../img/resumen.png"/></a><br>Mis Postulaciones</p>
+      <p><a class="registro" href="#/postulantes"><img src="../img/oportunidades.png"/></a><br>Oportunidades</p>-->
+</footer>`;
 postulacionContainer.innerHTML = postulacionTemplate;
 postulacionContainer.classList.add('container-home');
 
@@ -61,8 +49,7 @@ postulacionContainer.classList.add('container-home');
 
   // exit.addEventListener('click', controllerExit);
 
-  mainPost.appendChild(viewMisPosts());
-  
+  mainPost.appendChild(detallesPostActual())
 
   // const toggle = homeContainer.querySelector('#toogle');
   // const footer = homeContainer.querySelector('#footer');
