@@ -7,7 +7,7 @@ export const viewMisPostulaciones = () => {
   postulacionContainer.innerHTML = '';
   const postulacionTemplate = `  
 
-  <h2 class="oport-rec" >Oportunidades recientes</h2>
+  <h2 class="oport-rec" >Postulación actual</h2>
   <div id="mainMisPostulaciones"></div>
   <section>
     <h1  class="oport-rec">Historial</h1>
