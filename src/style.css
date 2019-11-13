@@ -380,6 +380,48 @@ header {
     z-index: 100;
     /* padding: 0 25px; */
 }
+.cajaPostulante{
+    box-sizing: border-box;
+    border: 2px solid #D8D8D8;
+    border-radius: 10px;
+    width: 312px;
+    height: 362px;
+}
+
+.caja2Postulante{
+    box-sizing: border-box;
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    height: 67px;
+}
+
+.circulo{
+    border-color: #168D86;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #168D86;
+}
+
+.verde{
+    background: #168D86;
+}
+
+.botones{
+    border: none;
+    width: 92px;
+    height: 33.83px;
+    background: #00B8AD;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.styleNone{
+    list-style: none;
+}
 
 .logo-bars {
     display: flex;
