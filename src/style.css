@@ -1004,6 +1004,20 @@ line-height: 18px;
     display: flex;
     justify-content: center;
 }
+.width-hist {
+    padding: 20px;
+ 
+}
+.width-hist p, .width-hist p p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+    /* identical to box height */
+    
+    letter-spacing: 0.2px;
+}
 
 
 .card .card-body {
@@ -1037,6 +1051,23 @@ line-height: 18px;
 }
 .margin-flecha {
     margin-left: -100px;
+}
+.detalle {
+    border-style: none;
+    width: 80px;
+    height: 40px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    background: #00B8AD;
+    border-radius: 10px;
+}
+.flex3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
