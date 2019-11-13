@@ -5,7 +5,8 @@ import {
   addComment,
   readComments,
   editLikes,
-  editPrivacity
+  editPrivacity,
+  addPostulacion
 } from "../model/model-firestore.js";
 
 import { currentUser } from "../model/model-firebase.js";
@@ -18,8 +19,8 @@ export const viewPosts = doc => {
   const postContainer = document.createElement("div");
 
   let postTemplate = "";
- 
-    postTemplate += `   
+
+  postTemplate += `   
       <div class="comandos-post">
         <div class="flex align">
         <img class="img-perfil" src="../img/Oval.png" alt="foto de perfil extraida del email, google o facebook del usuario"/>
@@ -36,8 +37,14 @@ export const viewPosts = doc => {
             </div>
             <p>Funciones: </p>
             <p class="margin">- ${doc.descripcion}</p>
-            <img class="imgConvocatoria margin" src="${doc.imagen}" alt="">
-            <button class="btn-compartir pointer" id="">
+            <img class="imgConvocatoria margin" src="${
+              doc.imagen
+            }" alt="imgConvocatoria">
+            <button class="postular btn-compartir pointer" data-id="${
+              doc.id
+            }" data-area="${doc.area}" data-puesto="${
+    doc.puesto
+  }" data-fecha="${String(doc.fecha)}">
               POSTULAR
             </button>
           </div>
@@ -46,8 +53,20 @@ export const viewPosts = doc => {
       <a class="registro" href="#/oportunidad" id="registrate">VER OPORTUNIDAD</a>
       <a class="registro" href="#/postulantes" id="registrate">POSTULANTES</a>
     `;
-    postContainer.innerHTML = postTemplate;
-    // postContainer.classList.add("");
+  postContainer.innerHTML = postTemplate;
+  // postContainer.classList.add("");
+  postContainer.querySelectorAll(".postular").forEach(
+    btn =>
+      console.log(btn) ||
+      btn.addEventListener("click", e => {
+        const area = String(e.target.dataset.area);
+        const puesto = String(e.target.dataset.puesto);
+        const fecha = String(e.target.dataset.fecha);
+        console.log(fecha);
+        const dniUser = currentUser();
+        addPostulacion(area, puesto, fecha, dniUser.email.slice(0, 8));
+      })
+  );
 
   return postContainer;
 };
