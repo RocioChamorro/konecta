@@ -1,6 +1,6 @@
-import { controllerExit, createPost } from '../controller.js';
+import { controllerExit, createPost } from "../controller.js";
 // import { colaborador } from '../model/model-firebase.js';
-import { viewMisPosts } from './misposts.js';
+import { viewMisPosts } from "./misposts.js";
 
 export const viewMisPostulaciones = () => {
   const postulacionContainer = document.createElement('div');
@@ -77,4 +77,3 @@ postulacionContainer.classList.add('container-home');
 
   return postulacionContainer;
 };
-
