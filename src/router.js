@@ -67,7 +67,7 @@ const viewTmp = router => {
     
     break;
     default:
-      root.innerHTML = "Hola";
+      root.innerHTML = "Hola";//
       break;
   }
 };
